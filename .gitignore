@@ -3,3 +3,9 @@ build/
 .packages
 *.iml
 .idea/
+
+# Yayın imzası (asla GitHub'a gitmesin)
+android/key.properties
+*.jks
+*.keystore
+hata_kaydi.txt

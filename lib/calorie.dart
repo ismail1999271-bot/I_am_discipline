@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:flutter/foundation.dart' show kDebugMode;
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'food_db.dart';
@@ -56,7 +57,7 @@ class Paywall extends StatelessWidget {
           child: const Text('7 gün ücretsiz başla')),
       const SizedBox(height: 8),
       // Geliştirme sırasında test için. Yayın öncesi kaldırılacak.
-      TextButton(onPressed: () => store.setPremium(true), child: const Text('Test için premium aç')),
+      if (kDebugMode) TextButton(onPressed: () => store.setPremium(true), child: const Text('Test için premium aç')),
     ]);
   }
 }

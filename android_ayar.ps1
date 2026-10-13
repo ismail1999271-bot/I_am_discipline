@@ -8,7 +8,7 @@ if ($x -notmatch "POST_NOTIFICATIONS") {
 if ($x -notmatch "usesCleartextTraffic") {
   $x = $x -replace '<application', '<application android:usesCleartextTraffic="true"'
 }
-Set-Content $m $x -Encoding UTF8
+[IO.File]::WriteAllText((Resolve-Path $m), $x)
 
 $kts = "android/app/build.gradle.kts"
 $grv = "android/app/build.gradle"
@@ -18,13 +18,13 @@ if (Test-Path $kts) {
     $g = $g -replace 'compileOptions\s*\{', "compileOptions {`n        isCoreLibraryDesugaringEnabled = true"
     $g += "`ndependencies {`n    coreLibraryDesugaring(`"com.android.tools:desugar_jdk_libs:2.1.4`")`n}`n"
   }
-  Set-Content $kts $g -Encoding UTF8
+  [IO.File]::WriteAllText((Resolve-Path $kts), $g)
 } elseif (Test-Path $grv) {
   $g = Get-Content $grv -Raw
   if ($g -notmatch "coreLibraryDesugaringEnabled") {
     $g = $g -replace 'compileOptions\s*\{', "compileOptions {`n        coreLibraryDesugaringEnabled true"
     $g += "`ndependencies {`n    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.1.4'`n}`n"
   }
-  Set-Content $grv $g -Encoding UTF8
+  [IO.File]::WriteAllText((Resolve-Path $grv), $g)
 }
 Write-Host "Android ayarlari tamam."

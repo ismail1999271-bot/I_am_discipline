@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart' show kIsWeb, kDebugMode;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'models.dart';
@@ -37,7 +38,9 @@ final packs = <String, List<Habit>>{
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await store.load();
-  await initReminders();
+  if (!kIsWeb) {
+    try { await initReminders(); } catch (_) {}
+  }
   runApp(const App());
 }
 
@@ -553,7 +556,7 @@ class MePage extends StatelessWidget {
       ListTile(leading: const Icon(Icons.workspace_premium_outlined),
           title: Text(store.premium ? 'Premium aktif' : 'Premium\'a geç'),
           subtitle: const Text('Beslenme koçu, antrenman, vücut takibi'),
-          trailing: store.premium ? TextButton(onPressed: () => store.setPremium(false), child: const Text('Kapat (test)')) : null),
+          trailing: store.premium && kDebugMode ? TextButton(onPressed: () => store.setPremium(false), child: const Text('Kapat (test)')) : null),
       const ReminderTile(),
       ListTile(leading: const Icon(Icons.share_outlined), title: const Text('İlerlememi paylaş'),
           subtitle: const Text('Sorumluluk ortağına gönder'),
