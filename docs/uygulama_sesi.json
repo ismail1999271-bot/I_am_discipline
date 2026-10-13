@@ -1,0 +1,19 @@
+{
+  "kimlik_cumleleri": {
+    "Okuyan": ["Bugünkü 10 sayfa, okuyan biri olduğunun kanıtı.", "Her sayfa seni daha bilgili yapıyor.", "Okumak zihnin için en iyi yatırım.", "Bugün de okudun, kimliğin güçlendi.", "Kitaplar seninle konuşuyor."],
+    "Fit": ["Bugünkü hareket, fit bir bedenin temeli.", "Vücudun sana teşekkür ediyor.", "Her antrenman seni daha güçlü kılıyor.", "Fit olmak bir seçim, bugün seçtin.", "Enerjin artıyor."],
+    "Dil bilen": ["Bugünkü kelimeler, yeni bir dünyanın anahtarı.", "Dil öğrenmek zihni açar.", "Her kelime seni daha global yapıyor.", "Dil bilen biri oluyorsun.", "Pratik mükemmelleştirir."],
+    "Üreten": ["Bugünkü üretim, geleceğinin temeli.", "Yaratmak seni özgür kılar.", "Her çalışma seni daha üretken yapıyor.", "Üreten biri olmak bir alışkanlık.", "Küçük adımlar büyük eserler."],
+    "Sakin zihin": ["Bugünkü nefes, zihnini sakinleştirdi.", "Sakinlik güçtür.", "Meditasyon seninle.", "Zihin sakin, beden güçlü.", "İç huzur dış başarıyı getirir."],
+    "Girişimci": ["Bugünkü çalışma, girişimin için bir adım.", "Fikirler eylemle büyür.", "Girişimci olmak cesaret ister, sen gösterdin.", "Her gün daha yakınsın.", "Başarı alışkanlıkla gelir."],
+    "Disiplinli": ["Bugünkü disiplin, yarınki özgürlük.", "Disiplin senin süper gücün.", "Tutarlılık her şeyi değiştirir.", "Disiplinli olmak bir kimlik.", "Sen seçtin, sen yaptın."]
+  },
+  "bildirimler": [
+    {"baslik": "Bugün de başla", "metin": "Küçük bir adım, büyük bir değişim."},
+    {"baslik": "Kimliğin güçleniyor", "metin": "Bugünkü oylar seni daha iyi yapıyor."},
+    {"baslik": "Serin devam ediyor", "metin": "Tutarlılık her şeyi değiştirir."}
+  ],
+  "seri_kirildi": ["Sorun değil, yarın devam edersin.", "Bir gün kaçırmak seriyi bitirmez, sen bitirmezsin.", "Geri dönmek de bir zaferdir."],
+  "rozet": {"7": ["İlk hafta tamam!"], "21": ["Alışkanlık oluşuyor!"], "66": ["Kimlik değişti!"], "100": ["Efsane seviye!"]},
+  "kacirma": {"Yorgun": ["Sadece minimumu yap, yeter."], "Vakit yok": ["2 dakika yeter, başla."], "Unuttum": ["Hatırlatıcıyı aç."], "İsteksiz": ["Sadece başla, gerisi gelir."]}
+}
