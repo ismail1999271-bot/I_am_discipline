@@ -1,0 +1,67 @@
+/// Yaklaşık değerler, 1 porsiyon için: (ad, porsiyon, kcal, protein g, karbonhidrat g, yağ g)
+class Food {
+  final String name, portion;
+  final double kcal, p, c, f;
+  const Food(this.name, this.portion, this.kcal, this.p, this.c, this.f);
+}
+
+const foods = <Food>[
+  // Kahvaltı
+  Food('Yumurta (haşlanmış)', '1 adet', 78, 6.3, 0.6, 5.3),
+  Food('Menemen', '1 porsiyon', 250, 12, 10, 18),
+  Food('Beyaz peynir', '30 g', 93, 5.4, 0.6, 7.5),
+  Food('Kaşar peyniri', '30 g', 110, 7.5, 0.3, 8.7),
+  Food('Zeytin (siyah)', '10 adet', 60, 0.5, 1.5, 6),
+  Food('Bal', '1 yemek kaşığı', 64, 0.1, 17, 0),
+  Food('Tereyağı', '1 tatlı kaşığı', 36, 0, 0, 4),
+  Food('Simit', '1 adet', 320, 10, 55, 7),
+  Food('Poğaça', '1 adet', 250, 5, 28, 13),
+  Food('Sucuklu yumurta', '1 porsiyon', 350, 18, 2, 30),
+  Food('Yulaf ezmesi', '40 g', 150, 5, 27, 2.7),
+  Food('Ekmek (beyaz)', '1 dilim', 75, 2.5, 14, 0.8),
+  Food('Ekmek (tam buğday)', '1 dilim', 70, 3.5, 12, 1),
+  // Ana yemekler
+  Food('Mercimek çorbası', '1 kase', 180, 9, 26, 4.5),
+  Food('Ezogelin çorbası', '1 kase', 170, 7, 25, 5),
+  Food('Kuru fasulye', '1 porsiyon', 280, 15, 35, 9),
+  Food('Nohut yemeği', '1 porsiyon', 260, 12, 33, 9),
+  Food('Pilav (pirinç)', '1 porsiyon', 250, 4.5, 45, 6),
+  Food('Bulgur pilavı', '1 porsiyon', 200, 5, 35, 5),
+  Food('Makarna', '1 porsiyon', 300, 10, 55, 5),
+  Food('Karnıyarık', '1 porsiyon', 350, 12, 18, 26),
+  Food('İmam bayıldı', '1 porsiyon', 280, 3, 18, 22),
+  Food('Taze fasulye (zeytinyağlı)', '1 porsiyon', 150, 3, 14, 9),
+  Food('Dolma (zeytinyağlı)', '5 adet', 250, 4, 35, 10),
+  Food('Mantı', '1 porsiyon', 450, 20, 55, 16),
+  Food('Lahmacun', '1 adet', 250, 11, 33, 8),
+  Food('Pide (kıymalı)', '1 dilim', 200, 9, 24, 7),
+  Food('Döner (ekmek arası)', '1 adet', 550, 28, 55, 24),
+  Food('Döner (porsiyon, pilavlı)', '1 porsiyon', 700, 35, 60, 35),
+  Food('Adana kebap', '1 porsiyon', 550, 35, 5, 43),
+  Food('Köfte (ızgara)', '6 adet', 400, 30, 8, 28),
+  Food('Tavuk göğsü (ızgara)', '150 g', 250, 46, 0, 5.4),
+  Food('Tavuk şiş', '1 porsiyon', 350, 45, 5, 16),
+  Food('Balık (ızgara, levrek)', '200 g', 280, 40, 0, 13),
+  Food('Hamburger', '1 adet', 550, 28, 45, 28),
+  Food('Pizza', '1 dilim', 285, 12, 36, 10),
+  Food('Tost (kaşarlı)', '1 adet', 350, 15, 35, 16),
+  Food('Patates kızartması', '1 porsiyon', 365, 4, 48, 17),
+  Food('Çoban salata', '1 porsiyon', 120, 2, 8, 9),
+  Food('Cacık', '1 kase', 90, 5, 6, 5),
+  // İçecek ve atıştırmalık
+  Food('Ayran', '1 bardak', 70, 4, 5, 3.5),
+  Food('Çay (şekerli)', '1 bardak', 20, 0, 5, 0),
+  Food('Türk kahvesi (şekerli)', '1 fincan', 55, 0, 10, 1),
+  Food('Kola', '330 ml', 140, 0, 35, 0),
+  Food('Portakal suyu', '1 bardak', 110, 1.7, 26, 0.5),
+  Food('Süt (tam yağlı)', '1 bardak', 150, 8, 12, 8),
+  Food('Yoğurt', '1 kase', 120, 7, 9, 6),
+  Food('Muz', '1 adet', 105, 1.3, 27, 0.4),
+  Food('Elma', '1 adet', 95, 0.5, 25, 0.3),
+  Food('Ceviz', '30 g', 196, 4.6, 4, 19.5),
+  Food('Fındık', '30 g', 188, 4.5, 5, 18),
+  Food('Baklava', '1 dilim', 250, 4, 30, 13),
+  Food('Sütlaç', '1 kase', 250, 7, 42, 6),
+  Food('Çikolata (sütlü)', '30 g', 160, 2.3, 17, 9),
+  Food('Protein tozu', '1 ölçek', 120, 24, 3, 1.5),
+];
