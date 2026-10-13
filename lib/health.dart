@@ -7,6 +7,7 @@ import 'package:http/http.dart' as http;
 import 'calorie.dart';
 import 'store.dart';
 import 'workout_db.dart';
+import 'budget.dart';
 import 'main.dart' show store, toast;
 
 /// Premium "Sağlık" sekmesi: Beslenme · Antrenman · Vücut
@@ -15,12 +16,14 @@ class HealthPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (!store.premium) return const Paywall();
-    return DefaultTabController(length: 3, child: Column(children: [
-      const TabBar(tabs: [Tab(text: 'Beslenme'), Tab(text: 'Antrenman'), Tab(text: 'Vücut')]),
+    return DefaultTabController(length: 4, child: Column(children: [
+      const TabBar(isScrollable: true, tabAlignment: TabAlignment.start,
+          tabs: [Tab(text: 'BESLENME'), Tab(text: 'ANTRENMAN'), Tab(text: 'VÜCUT'), Tab(text: 'BÜTÇE')]),
       Expanded(child: TabBarView(children: [
         ListenableBuilder(listenable: store, builder: (_, __) => const NutritionTab()),
         ListenableBuilder(listenable: store, builder: (_, __) => const WorkoutTab()),
         ListenableBuilder(listenable: store, builder: (_, __) => const BodyTab()),
+        ListenableBuilder(listenable: store, builder: (_, __) => const BudgetTab()),
       ])),
     ]));
   }

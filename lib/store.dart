@@ -29,6 +29,10 @@ class Store extends ChangeNotifier {
   List<Map<String, dynamic>> bodyLog = [];
   List<Map<String, dynamic>> sessions = [];
   Map<String, String> aiText = {};
+  // Bütçe
+  Map<String, dynamic> budget = {};
+  List<Map<String, dynamic>> expenses = [];
+  List<Map<String, dynamic>> savingsGoals = [];
 
   bool get onboarded => habits.isNotEmpty;
   List<Habit> get active => habits.where((h) => !h.archived).toList();
@@ -50,6 +54,7 @@ class Store extends ChangeNotifier {
         'host': ollamaHost, 'model': ollamaModel,
         'premium': premium, 'body': bodyProfile, 'meals': meals,
         'water': water, 'bodyLog': bodyLog, 'sessions': sessions, 'aiText': aiText,
+        'budget': budget, 'expenses': expenses, 'savings': savingsGoals,
       };
 
   void _fromJson(Map<String, dynamic> j) {
@@ -71,6 +76,9 @@ class Store extends ChangeNotifier {
     bodyLog = ((j['bodyLog'] ?? []) as List).map((m) => Map<String, dynamic>.from(m)).toList();
     sessions = ((j['sessions'] ?? []) as List).map((m) => Map<String, dynamic>.from(m)).toList();
     aiText = Map<String, String>.from(j['aiText'] ?? {});
+    budget = Map<String, dynamic>.from(j['budget'] ?? {});
+    expenses = ((j['expenses'] ?? []) as List).map((m) => Map<String, dynamic>.from(m)).toList();
+    savingsGoals = ((j['savings'] ?? []) as List).map((m) => Map<String, dynamic>.from(m)).toList();
   }
 
   Future<void> load() async {
@@ -102,7 +110,7 @@ class Store extends ChangeNotifier {
 
   Future<void> resetAll() async {
     identities = []; habits = []; log = {}; skips = {}; reviews = {}; letter = ''; startDate = '';
-    bodyProfile = {}; meals = {}; water = {}; bodyLog = []; sessions = []; aiText = {};
+    bodyProfile = {}; meals = {}; water = {}; bodyLog = []; sessions = []; aiText = {}; budget = {}; expenses = []; savingsGoals = [];
     await _save();
   }
 
@@ -173,6 +181,32 @@ class Store extends ChangeNotifier {
       return allHit ? 'Geçen sefer $w kg ile hepsi tamam. Bugün ${w + 2.5} kg dene.' : 'Geçen sefer $w kg. Aynı ağırlıkla tekrarları tamamla.';
     }
     return null;
+  }
+
+  void setBudget(Map<String, dynamic> b) { budget = b; _save(); }
+  void addExpense(Map<String, dynamic> e) { expenses.add(e); _save(); }
+  void addSavingsGoal(Map<String, dynamic> g) { savingsGoals.add(g); _save(); }
+  void removeSavingsGoal(String id) { savingsGoals.removeWhere((g) => g['id'] == id); _save(); }
+  void moveSavings(String id, num delta) {
+    for (final g in savingsGoals) {
+      if (g['id'] == id) g['saved'] = ((g['saved'] as num) + delta).clamp(0, double.infinity);
+    }
+    _save();
+  }
+  void removeExpense(String id) { expenses.removeWhere((e) => e['id'] == id); _save(); }
+
+  /// Bugün günlük bütçe payının altında kalındı mı? (en az bir gün kayıt ve bütçe varsa)
+  bool get budgetOnTrackToday {
+    final inc = (budget['income'] ?? 0) as num;
+    if (inc <= 0) return false;
+    final now = DateTime.now();
+    final daysInMonth = DateTime(now.year, now.month + 1, 0).day;
+    final daily = (inc - ((budget['saving'] ?? 0) as num)) / daysInMonth;
+    final today = dayKey(now);
+    final spentToday = expenses.where((e) => e['date'] == today).fold<num>(0, (a, e) => a + (e['amt'] as num));
+    final monthSpent = expenses.where((e) => (e['date'] as String).startsWith(today.substring(0, 7)))
+        .fold<num>(0, (a, e) => a + (e['amt'] as num));
+    return spentToday <= daily && monthSpent <= daily * now.day;
   }
 
   void setCoach(String host, String model) { ollamaHost = host; ollamaModel = model; _save(); }

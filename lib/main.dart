@@ -10,6 +10,8 @@ import 'timer_page.dart';
 import 'badges.dart';
 import 'calorie.dart';
 import 'health.dart';
+import 'theme.dart';
+import 'motivation.dart';
 
 final store = Store();
 final coach = Coach();
@@ -39,7 +41,11 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await store.load();
   if (!kIsWeb) {
-    try { await initReminders(); } catch (_) {}
+    try {
+      await initReminders();
+      // Motivasyon bildirimlerini her açılışta önümüzdeki 7 gün için tazele
+      if (store.onboarded) await scheduleMotivation(await motivationCount(), store.identities);
+    } catch (_) {}
   }
   runApp(const App());
 }
@@ -53,8 +59,9 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) => MaterialApp(
         title: 'I Am Disiplin',
         debugShowCheckedModeBanner: false,
-        theme: ThemeData(colorSchemeSeed: const Color(0xFF1F6B52), useMaterial3: true),
-        darkTheme: ThemeData(colorSchemeSeed: const Color(0xFF1F6B52), brightness: Brightness.dark, useMaterial3: true),
+        theme: ironTheme(),
+        darkTheme: ironTheme(),
+        themeMode: ThemeMode.dark,
         home: ListenableBuilder(listenable: store,
             builder: (_, __) => store.onboarded ? const Home() : const Onboarding()),
       );
@@ -137,7 +144,10 @@ class _OnboardingState extends State<Onboarding> {
         Row(children: [
           TextButton(onPressed: () => setState(() => step = 1), child: const Text('Geri')),
           const Spacer(),
-          FilledButton(onPressed: () => store.setup(ids.toList(), chosen, letterText: letter.text.trim()),
+          FilledButton(onPressed: () {
+                store.setup(ids.toList(), chosen, letterText: letter.text.trim());
+                scheduleMotivation(3, ids.toList()).catchError((_) {});
+              },
               child: const Text('Başla')),
         ]),
       ],
@@ -179,7 +189,7 @@ class _HomeState extends State<Home> {
         bottomNavigationBar: NavigationBar(selectedIndex: tab, onDestinationSelected: (i) => setState(() => tab = i),
             destinations: const [
               NavigationDestination(icon: Icon(Icons.today), label: 'Bugün'),
-              NavigationDestination(icon: Icon(Icons.favorite_outline), label: 'Sağlık'),
+              NavigationDestination(icon: Icon(Icons.local_fire_department_outlined), label: 'Yaşam'),
               NavigationDestination(icon: Icon(Icons.insights), label: 'İlerleme'),
               NavigationDestination(icon: Icon(Icons.psychology), label: 'Koç'),
               NavigationDestination(icon: Icon(Icons.person_outline), label: 'Ben'),
@@ -207,6 +217,7 @@ class TodayPage extends StatelessWidget {
       votes['Fit'] = (votes['Fit'] ?? 0) + 2;
     }
     if (store.premium && store.workedOutToday) votes['Fit'] = (votes['Fit'] ?? 0) + 2;
+    if (store.premium && store.budgetOnTrackToday) votes['Disiplinli'] = (votes['Disiplinli'] ?? 0) + 1;
     final routines = store.routinesToday();
     return ListView(padding: const EdgeInsets.all(16), children: [
       Text('Seviye ${store.level} · ${store.daysSinceStart + 1}. gün', style: tt.labelLarge),
@@ -216,6 +227,13 @@ class TodayPage extends StatelessWidget {
         for (final i in {...store.identities, ...votes.keys}) Chip(label: Text('$i · ${votes[i] ?? 0} oy')),
       ]),
       const Text('Tam hedef 2 oy, minimum 1 oy. Her oy "ben buyum" demek.', style: TextStyle(fontSize: 12)),
+      const SizedBox(height: 10),
+      Container(
+        padding: const EdgeInsets.all(14),
+        decoration: BoxDecoration(border: Border(left: BorderSide(color: Theme.of(context).colorScheme.primary, width: 4)),
+            color: Theme.of(context).colorScheme.surfaceContainer),
+        child: Text(quoteOfDay(store.identities), style: tt.titleMedium),
+      ),
       const SizedBox(height: 8),
       if (store.letterOpen) const LetterCard(),
       for (final h in store.missedYesterday()) SkipCard(h),
@@ -555,9 +573,10 @@ class MePage extends StatelessWidget {
       const Divider(height: 32),
       ListTile(leading: const Icon(Icons.workspace_premium_outlined),
           title: Text(store.premium ? 'Premium aktif' : 'Premium\'a geç'),
-          subtitle: const Text('Beslenme koçu, antrenman, vücut takibi'),
+          subtitle: const Text('Beslenme, antrenman, vücut ve bütçe'),
           trailing: store.premium && kDebugMode ? TextButton(onPressed: () => store.setPremium(false), child: const Text('Kapat (test)')) : null),
       const ReminderTile(),
+      const MotivationTile(),
       ListTile(leading: const Icon(Icons.share_outlined), title: const Text('İlerlememi paylaş'),
           subtitle: const Text('Sorumluluk ortağına gönder'),
           onTap: () async {
@@ -603,86 +622,214 @@ Future<void> editHabit(BuildContext context, Habit h) async {
   }
 }
 
+/// Hazır şablonlar: tek dokunuşla formu doldurur.
+class _Tpl {
+  final String icon, name, unit, identity;
+  final HabitType type;
+  final num goal, mini;
+  const _Tpl(this.icon, this.name, this.type, this.goal, this.mini, this.unit, this.identity);
+}
+
+const _templates = [
+  _Tpl('🧘', 'Yoga', HabitType.dur, 60, 10, 'dk', 'Fit'),
+  _Tpl('📖', 'Kitap oku', HabitType.dur, 30, 10, 'dk', 'Okuyan'),
+  _Tpl('🏃', 'Koşu', HabitType.qty, 5, 1, 'km', 'Fit'),
+  _Tpl('💪', 'Şınav', HabitType.qty, 50, 10, 'tekrar', 'Fit'),
+  _Tpl('🗣', 'Yeni kelime', HabitType.qty, 30, 5, 'kelime', 'Dil bilen'),
+  _Tpl('🎯', 'Derin çalışma', HabitType.dur, 90, 25, 'dk', 'Üreten'),
+  _Tpl('🧠', 'Meditasyon', HabitType.dur, 15, 3, 'dk', 'Sakin zihin'),
+  _Tpl('🧊', 'Soğuk duş', HabitType.bool_, 1, 1, '', 'Disiplinli'),
+  _Tpl('✍', 'Günlük yaz', HabitType.bool_, 1, 1, '', 'Üreten'),
+  _Tpl('📵', 'Telefonsuz saat', HabitType.dur, 60, 15, 'dk', 'Disiplinli'),
+];
+
 /// Yeni alışkanlık veya düzenleme. Silme seçilirse key '__delete__' olan bir Habit döner.
 Future<Habit?> showHabitSheet(BuildContext context, List<String> ids, {Habit? existing}) {
   final ex = existing;
   final name = TextEditingController(text: ex?.name ?? ''),
-      goal = TextEditingController(text: ex == null ? '' : '${ex.goal}'),
-      mini = TextEditingController(text: ex == null ? '' : '${ex.mini}'),
       unit = TextEditingController(text: ex?.unit ?? ''),
       routine = TextEditingController(text: ex?.routine ?? '');
   var type = ex?.type ?? HabitType.dur;
+  num goal = ex?.goal ?? 30, mini = ex?.mini ?? 10;
   final idList = ids.isEmpty ? ['Disiplinli'] : ids;
   var identity = ex != null && idList.contains(ex.identity) ? ex.identity : idList.first;
   final days = <int>{...(ex?.days ?? [1, 2, 3, 4, 5, 6, 7])};
   var confirmDelete = false;
 
   return showModalBottomSheet<Habit>(context: context, isScrollControlled: true, useSafeArea: true,
-    builder: (ctx) => StatefulBuilder(builder: (ctx, set) => SingleChildScrollView(
-      padding: EdgeInsets.fromLTRB(20, 20, 20, MediaQuery.of(ctx).viewInsets.bottom + 20),
-      child: Column(mainAxisSize: MainAxisSize.min, crossAxisAlignment: CrossAxisAlignment.stretch, children: [
-        Text(ex == null ? 'Yeni alışkanlık' : 'Alışkanlığı düzenle', style: Theme.of(ctx).textTheme.titleLarge),
-        TextField(controller: name, decoration: const InputDecoration(labelText: 'Ad (örn. Yoga)')),
-        const SizedBox(height: 12),
-        SegmentedButton<HabitType>(segments: const [
-          ButtonSegment(value: HabitType.dur, label: Text('Süre')),
-          ButtonSegment(value: HabitType.qty, label: Text('Miktar')),
-          ButtonSegment(value: HabitType.bool_, label: Text('Evet/Hayır')),
-        ], selected: {type}, onSelectionChanged: (v) => set(() => type = v.first)),
-        if (type != HabitType.bool_) Row(children: [
-          Expanded(child: TextField(controller: goal, keyboardType: TextInputType.number,
-              decoration: const InputDecoration(labelText: 'Hedef'))),
-          const SizedBox(width: 8),
-          Expanded(child: TextField(controller: mini, keyboardType: TextInputType.number,
-              decoration: const InputDecoration(labelText: 'Kötü gün min.'))),
-          const SizedBox(width: 8),
-          Expanded(child: TextField(controller: unit, decoration: InputDecoration(
-              labelText: 'Birim', hintText: type == HabitType.dur ? 'dk' : 'km'))),
+    builder: (ctx) => StatefulBuilder(builder: (ctx, set) {
+      final tt = Theme.of(ctx).textTheme;
+      final u = type == HabitType.bool_ ? '' : (unit.text.trim().isEmpty ? (type == HabitType.dur ? 'dk' : 'adet') : unit.text.trim());
+      num step(num v) => type == HabitType.dur ? (v >= 60 ? 15 : 5) : (v >= 20 ? 5 : 1);
+      final perYear = type == HabitType.bool_ ? days.length * 52
+          : goal * days.length * 52 / (type == HabitType.dur && u == 'dk' ? 60 : 1);
+      final yearText = type == HabitType.bool_ ? '${perYear.round()} gün'
+          : type == HabitType.dur && u == 'dk' ? '${perYear.round()} saat' : '${perYear.round()} $u';
+
+      Widget section(String t) => Padding(padding: const EdgeInsets.only(top: 18, bottom: 8),
+          child: Text(t.toUpperCase(), style: tt.labelMedium));
+
+      Widget stepper(String label, num v, void Function(num) onSet, Color c) => Expanded(child: Container(
+        padding: const EdgeInsets.symmetric(vertical: 10),
+        decoration: BoxDecoration(color: Iron.bg, border: Border.all(color: Iron.line), borderRadius: BorderRadius.circular(6)),
+        child: Column(children: [
+          Text(label.toUpperCase(), style: tt.labelSmall),
+          Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+            IconButton(icon: const Icon(Icons.remove), onPressed: () => set(() => onSet(v - step(v) < 1 ? 1 : v - step(v)))),
+            Column(children: [
+              Text('$v', style: tt.displaySmall?.copyWith(color: c, height: 1)),
+              Text(u, style: tt.labelSmall),
+            ]),
+            IconButton(icon: const Icon(Icons.add), onPressed: () => set(() => onSet(v + step(v)))),
+          ]),
         ]),
-        const SizedBox(height: 12),
-        const Text('Hangi günler?'),
-        Wrap(spacing: 4, children: [
-          for (var d = 1; d <= 7; d++)
-            FilterChip(label: Text(dayNames[d - 1]), selected: days.contains(d),
-                onSelected: (v) => set(() { if (v) { days.add(d); } else if (days.length > 1) { days.remove(d); } })),
-        ]),
-        const SizedBox(height: 8),
-        DropdownButtonFormField<String>(initialValue: identity,
-            decoration: const InputDecoration(labelText: 'Hangi kimliğe oy veriyor?'),
-            items: [for (final i in idList) DropdownMenuItem(value: i, child: Text(i))],
-            onChanged: (v) => identity = v ?? identity),
-        TextField(controller: routine, decoration: const InputDecoration(
-            labelText: 'Rutin (isteğe bağlı)', hintText: 'Sabah, Akşam...')),
-        Wrap(spacing: 6, children: [
-          for (final r in {'Sabah', 'Akşam', ...store.routineNames})
-            ActionChip(label: Text(r), onPressed: () => set(() => routine.text = r)),
-        ]),
-        const SizedBox(height: 16),
-        FilledButton(onPressed: () {
-          if (name.text.trim().isEmpty) return;
-          final b = type == HabitType.bool_;
-          final g = b ? 1 : (num.tryParse(goal.text) ?? 1);
-          var m = b ? 1 : (num.tryParse(mini.text) ?? g);
-          if (m > g) m = g;
-          Navigator.pop(ctx, Habit(
-              key: ex?.key ?? 'h${DateTime.now().millisecondsSinceEpoch}',
-              name: name.text.trim(), type: type, goal: g, mini: m,
-              unit: b ? '' : (unit.text.trim().isEmpty ? (type == HabitType.dur ? 'dk' : '') : unit.text.trim()),
-              identity: identity, days: (days.toList()..sort()), routine: routine.text.trim(),
-              archived: ex?.archived ?? false));
-        }, child: Text(ex == null ? 'Ekle' : 'Kaydet')),
-        if (ex != null) ...[
+      ));
+
+      return SingleChildScrollView(
+        padding: EdgeInsets.fromLTRB(20, 16, 20, MediaQuery.of(ctx).viewInsets.bottom + 24),
+        child: Column(mainAxisSize: MainAxisSize.min, crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+          Center(child: Container(width: 40, height: 4, color: Iron.line)),
+          const SizedBox(height: 12),
+          Text(ex == null ? 'YENİ ALIŞKANLIK' : 'ALIŞKANLIĞI DÜZENLE', style: tt.headlineSmall),
+          Text('Küçük eylem. Büyük kimlik.', style: TextStyle(color: Iron.steel)),
+
+          if (ex == null) ...[
+            section('Hızlı başla'),
+            SizedBox(height: 74, child: ListView(scrollDirection: Axis.horizontal, children: [
+              for (final t in _templates)
+                Padding(padding: const EdgeInsets.only(right: 8), child: InkWell(
+                  onTap: () => set(() {
+                    name.text = t.name; type = t.type; goal = t.goal; mini = t.mini; unit.text = t.unit;
+                    if (idList.contains(t.identity)) identity = t.identity;
+                  }),
+                  child: Container(width: 78,
+                    decoration: BoxDecoration(color: name.text == t.name ? Iron.fire : Iron.bg,
+                        border: Border.all(color: name.text == t.name ? Iron.fire : Iron.line),
+                        borderRadius: BorderRadius.circular(6)),
+                    child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+                      Text(t.icon, style: const TextStyle(fontSize: 24)),
+                      const SizedBox(height: 4),
+                      Text(t.name, maxLines: 1, overflow: TextOverflow.ellipsis,
+                          style: TextStyle(fontSize: 11, fontWeight: FontWeight.w800,
+                              color: name.text == t.name ? Colors.black : Iron.white)),
+                    ])),
+                )),
+            ])),
+          ],
+
+          section('Ne yapacaksın?'),
+          TextField(controller: name, onChanged: (_) => set(() {}),
+              style: tt.titleLarge, decoration: const InputDecoration(hintText: 'örn. Yoga')),
+
+          section('Nasıl ölçülür?'),
+          SegmentedButton<HabitType>(
+            style: SegmentedButton.styleFrom(selectedBackgroundColor: Iron.fire, selectedForegroundColor: Colors.black,
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4))),
+            segments: const [
+              ButtonSegment(value: HabitType.dur, icon: Icon(Icons.timer_outlined), label: Text('Süre')),
+              ButtonSegment(value: HabitType.qty, icon: Icon(Icons.tag), label: Text('Miktar')),
+              ButtonSegment(value: HabitType.bool_, icon: Icon(Icons.check), label: Text('Yaptım')),
+            ], selected: {type}, onSelectionChanged: (v) => set(() => type = v.first)),
+
+          if (type != HabitType.bool_) ...[
+            section('Hedef ve kötü gün minimumu'),
+            Row(children: [
+              stepper('Hedef', goal, (v) { goal = v; if (mini > goal) mini = goal; }, Iron.fire),
+              const SizedBox(width: 8),
+              stepper('Kötü gün', mini, (v) => mini = v > goal ? goal : v, Iron.ember),
+            ]),
+            const SizedBox(height: 8),
+            if (type == HabitType.dur)
+              Wrap(spacing: 6, children: [
+                for (final m in [10, 15, 20, 30, 45, 60, 90, 120])
+                  ChoiceChip(label: Text('$m dk'), selected: goal == m,
+                      onSelected: (_) => set(() { goal = m; unit.text = 'dk'; if (mini > goal) mini = (m / 4).round(); })),
+              ])
+            else
+              TextField(controller: unit, onChanged: (_) => set(() {}),
+                  decoration: const InputDecoration(labelText: 'Birim', hintText: 'km, sayfa, kelime, tekrar')),
+          ],
+
+          section('Hangi günler?'),
+          Wrap(spacing: 6, runSpacing: 6, children: [
+            for (final p in <String, List<int>>{
+              'Her gün': [1, 2, 3, 4, 5, 6, 7], 'Hafta içi': [1, 2, 3, 4, 5],
+              'Hafta sonu': [6, 7], '3 gün': [1, 3, 5]}.entries)
+              ActionChip(label: Text(p.key), onPressed: () => set(() { days..clear()..addAll(p.value); })),
+          ]),
           const SizedBox(height: 8),
-          TextButton(
-            onPressed: () {
-              if (!confirmDelete) { set(() => confirmDelete = true); return; }
-              Navigator.pop(ctx, ex.copyWithKey('__delete__'));
-            },
-            child: Text(confirmDelete ? 'Emin misin? Geçmişi de silinir. Tekrar dokun.' : 'Sil',
-                style: TextStyle(color: Theme.of(ctx).colorScheme.error)),
+          Row(children: [
+            for (var d = 1; d <= 7; d++)
+              Expanded(child: GestureDetector(
+                onTap: () => set(() { if (!days.remove(d)) days.add(d); if (days.isEmpty) days.add(d); }),
+                child: Container(height: 42, margin: const EdgeInsets.symmetric(horizontal: 2),
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(color: days.contains(d) ? Iron.fire : Iron.bg,
+                      border: Border.all(color: days.contains(d) ? Iron.fire : Iron.line),
+                      borderRadius: BorderRadius.circular(4)),
+                  child: Text(dayNames[d - 1].substring(0, 2).toUpperCase(),
+                      style: TextStyle(fontWeight: FontWeight.w900, color: days.contains(d) ? Colors.black : Iron.steel))),
+              )),
+          ]),
+
+          section('Hangi kimliğe oy veriyor?'),
+          Wrap(spacing: 6, runSpacing: 6, children: [
+            for (final i in idList)
+              ChoiceChip(label: Text(i), selected: identity == i, onSelected: (_) => set(() => identity = i)),
+          ]),
+
+          section('Rutin (isteğe bağlı)'),
+          Wrap(spacing: 6, children: [
+            for (final r in {'Sabah', 'Akşam', ...store.routineNames})
+              ChoiceChip(label: Text(r), selected: routine.text == r,
+                  onSelected: (v) => set(() => routine.text = v ? r : '')),
+          ]),
+
+          // Canlı kimlik önizlemesi
+          Container(
+            margin: const EdgeInsets.only(top: 20),
+            padding: const EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              gradient: const LinearGradient(colors: [Color(0xFF2A0E04), Iron.bg], begin: Alignment.topLeft, end: Alignment.bottomRight),
+              border: Border.all(color: Iron.fire.withValues(alpha: .5)),
+              borderRadius: BorderRadius.circular(6),
+            ),
+            child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Text('BU ALIŞKANLIK SENİ NEREYE GÖTÜRÜR', style: tt.labelMedium),
+              const SizedBox(height: 8),
+              Text(yearText.toUpperCase(), style: tt.displaySmall?.copyWith(color: Iron.fire)),
+              Text('1 yılda, ${days.length == 7 ? "her gün" : "haftada ${days.length} gün"}', style: TextStyle(color: Iron.steel)),
+              const SizedBox(height: 10),
+              Text('${name.text.isEmpty ? "Bu alışkanlık" : name.text} → $identity kimliğine her gün +2 oy.'
+                  '${type == HabitType.bool_ ? "" : " Kötü günde $mini $u yeter, seri bozulmaz."}',
+                  style: const TextStyle(fontWeight: FontWeight.w700)),
+            ]),
           ),
-        ],
-      ]))));
+
+          const SizedBox(height: 16),
+          SizedBox(height: 52, child: FilledButton(onPressed: () {
+            if (name.text.trim().isEmpty) return;
+            final b = type == HabitType.bool_;
+            Navigator.pop(ctx, Habit(
+                key: ex?.key ?? 'h${DateTime.now().millisecondsSinceEpoch}',
+                name: name.text.trim(), type: type, goal: b ? 1 : goal, mini: b ? 1 : mini,
+                unit: b ? '' : u, identity: identity, days: (days.toList()..sort()), routine: routine.text.trim(),
+                archived: ex?.archived ?? false));
+          }, child: Text(ex == null ? 'BAŞLA' : 'KAYDET'))),
+          if (ex != null) ...[
+            const SizedBox(height: 8),
+            TextButton(
+              onPressed: () {
+                if (!confirmDelete) { set(() => confirmDelete = true); return; }
+                Navigator.pop(ctx, ex.copyWithKey('__delete__'));
+              },
+              child: Text(confirmDelete ? 'Emin misin? Geçmişi de silinir. Tekrar dokun.' : 'Sil',
+                  style: const TextStyle(color: Iron.blood)),
+            ),
+          ],
+        ]),
+      );
+    }));
 }
 
 extension on Habit {
@@ -759,4 +906,42 @@ class _ReviewCardState extends State<ReviewCard> {
         FilledButton(onPressed: () => store.saveReview({'iyi': good.text, 'zor': hard.text, 'degisim': change.text}),
             child: const Text('Kaydet')),
       ])));
+}
+
+// ======================= MOTİVASYON BİLDİRİMLERİ =======================
+class MotivationTile extends StatefulWidget {
+  const MotivationTile({super.key});
+  @override
+  State<MotivationTile> createState() => _MotivationTileState();
+}
+
+class _MotivationTileState extends State<MotivationTile> {
+  int count = 3;
+  @override
+  void initState() {
+    super.initState();
+    motivationCount().then((v) { if (mounted) setState(() => count = v); });
+  }
+
+  @override
+  Widget build(BuildContext context) => ListTile(
+        leading: const Icon(Icons.bolt),
+        title: const Text('Motivasyon sözleri'),
+        subtitle: Text(count == 0 ? 'Kapalı' : count == 3 ? 'Günde 3 kez: 09:00 · 14:00 · 20:00'
+            : 'Günde 4 kez: 08:00 · 12:00 · 16:00 · 21:00'),
+        trailing: SegmentedButton<int>(
+          showSelectedIcon: false,
+          segments: const [
+            ButtonSegment(value: 0, label: Text('Kapalı')),
+            ButtonSegment(value: 3, label: Text('3')),
+            ButtonSegment(value: 4, label: Text('4')),
+          ],
+          selected: {count},
+          onSelectionChanged: (v) async {
+            setState(() => count = v.first);
+            await scheduleMotivation(count, store.identities);
+            if (context.mounted) toast(context, count == 0 ? 'Motivasyon bildirimleri kapandı.' : 'Günde $count söz gelecek.');
+          },
+        ),
+      );
 }

@@ -45,6 +45,7 @@ class Paywall extends StatelessWidget {
       row(Icons.timer_outlined, 'Set kaydı ve dinlenme sayacı', 'Geçen seansa göre "+2,5 kg dene" önerisi'),
       row(Icons.auto_awesome_motion, 'AI kişisel antrenman programı', 'Hedef, yer ve gün sayına göre'),
       row(Icons.monitor_weight_outlined, 'Kilo ve ölçü takibi', 'Grafikle değişimini gör'),
+      row(Icons.account_balance_wallet_outlined, 'Aylık bütçe planı', '50/30/20 dağılımı, günlük harcama limiti, birikim hedefi'),
       row(Icons.how_to_reg, 'Fit kimliğine oy', 'Antrenman ve kalori hedefi günleri +2 oy'),
       const SizedBox(height: 16),
       Card(child: Padding(padding: const EdgeInsets.all(16), child: Column(children: [
