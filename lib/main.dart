@@ -96,13 +96,17 @@ class _OnboardingState extends State<Onboarding> {
         Text('Adım 2 / 3', style: tt.labelMedium),
         Text('Programını kur', style: tt.headlineSmall),
         const Text('En fazla 3 alışkanlıkla başla. Güçlendikçe yeni slot açılır.'),
-        for (final p in packs.keys)
-          RadioListTile<String>(value: p, groupValue: pack, title: Text(p),
-              subtitle: Text(packs[p]!.map((h) => h.name).join(' · ')),
-              onChanged: (v) => setState(() { pack = v; })),
-        RadioListTile<String>(value: '_custom', groupValue: pack, title: const Text('Kendim oluşturacağım'),
-            subtitle: Text(custom.isEmpty ? 'Kendi alışkanlıklarını ekle' : custom.map((h) => h.name).join(' · ')),
-            onChanged: (v) => setState(() { pack = v; })),
+        RadioGroup<String>(
+          groupValue: pack,
+          onChanged: (v) => setState(() { pack = v; }),
+          child: Column(children: [
+            for (final p in packs.keys)
+              RadioListTile<String>(value: p, title: Text(p),
+                  subtitle: Text(packs[p]!.map((h) => h.name).join(' · '))),
+            RadioListTile<String>(value: '_custom', title: const Text('Kendim oluşturacağım'),
+                subtitle: Text(custom.isEmpty ? 'Kendi alışkanlıklarını ekle' : custom.map((h) => h.name).join(' · '))),
+          ]),
+        ),
         if (pack == '_custom')
           OutlinedButton.icon(
               onPressed: custom.length >= 3 ? null : () async {
@@ -375,7 +379,7 @@ class ProgressPage extends StatelessWidget {
                 return Container(height: 18, margin: const EdgeInsets.all(2),
                     decoration: BoxDecoration(borderRadius: BorderRadius.circular(3),
                         color: future ? Colors.transparent
-                            : sc == 0 ? cs.surfaceContainerHighest : cs.primary.withOpacity(.25 + sc * .75)));
+                            : sc == 0 ? cs.surfaceContainerHighest : cs.primary.withValues(alpha: .25 + sc * .75)));
               }),
           ])),
       ]),
@@ -640,7 +644,7 @@ Future<Habit?> showHabitSheet(BuildContext context, List<String> ids, {Habit? ex
                 onSelected: (v) => set(() { if (v) { days.add(d); } else if (days.length > 1) { days.remove(d); } })),
         ]),
         const SizedBox(height: 8),
-        DropdownButtonFormField<String>(value: identity,
+        DropdownButtonFormField<String>(initialValue: identity,
             decoration: const InputDecoration(labelText: 'Hangi kimliğe oy veriyor?'),
             items: [for (final i in idList) DropdownMenuItem(value: i, child: Text(i))],
             onChanged: (v) => identity = v ?? identity),

@@ -151,13 +151,13 @@ class _WorkoutTabState extends State<WorkoutTab> {
     final ok = await showDialog<bool>(context: context, builder: (ctx) => StatefulBuilder(builder: (ctx, set) => AlertDialog(
       title: const Text('Kişisel program'),
       content: Column(mainAxisSize: MainAxisSize.min, children: [
-        DropdownButtonFormField<String>(value: goal, decoration: const InputDecoration(labelText: 'Hedef'),
+        DropdownButtonFormField<String>(initialValue: goal, decoration: const InputDecoration(labelText: 'Hedef'),
             items: [for (final g in ['Kas kazanmak', 'Yağ yakmak', 'Kondisyon', 'Esneklik']) DropdownMenuItem(value: g, child: Text(g))],
             onChanged: (v) => goal = v ?? goal),
-        DropdownButtonFormField<String>(value: place, decoration: const InputDecoration(labelText: 'Nerede'),
+        DropdownButtonFormField<String>(initialValue: place, decoration: const InputDecoration(labelText: 'Nerede'),
             items: [for (final g in ['Ev', 'Salon', 'Açık hava']) DropdownMenuItem(value: g, child: Text(g))],
             onChanged: (v) => place = v ?? place),
-        DropdownButtonFormField<String>(value: days, decoration: const InputDecoration(labelText: 'Haftada kaç gün'),
+        DropdownButtonFormField<String>(initialValue: days, decoration: const InputDecoration(labelText: 'Haftada kaç gün'),
             items: [for (final g in ['2', '3', '4', '5']) DropdownMenuItem(value: g, child: Text(g))],
             onChanged: (v) => days = v ?? days),
       ]),
