@@ -33,6 +33,9 @@ class Store extends ChangeNotifier {
   Map<String, dynamic> budget = {};
   List<Map<String, dynamic>> expenses = [];
   List<Map<String, dynamic>> savingsGoals = [];
+  // Yıllık plan ve ek gelir
+  List<Map<String, dynamic>> yearGoals = [];
+  List<Map<String, dynamic>> incomes = [];
 
   bool get onboarded => habits.isNotEmpty;
   List<Habit> get active => habits.where((h) => !h.archived).toList();
@@ -55,6 +58,7 @@ class Store extends ChangeNotifier {
         'premium': premium, 'body': bodyProfile, 'meals': meals,
         'water': water, 'bodyLog': bodyLog, 'sessions': sessions, 'aiText': aiText,
         'budget': budget, 'expenses': expenses, 'savings': savingsGoals,
+        'yearGoals': yearGoals, 'incomes': incomes,
       };
 
   void _fromJson(Map<String, dynamic> j) {
@@ -79,6 +83,8 @@ class Store extends ChangeNotifier {
     budget = Map<String, dynamic>.from(j['budget'] ?? {});
     expenses = ((j['expenses'] ?? []) as List).map((m) => Map<String, dynamic>.from(m)).toList();
     savingsGoals = ((j['savings'] ?? []) as List).map((m) => Map<String, dynamic>.from(m)).toList();
+    yearGoals = ((j['yearGoals'] ?? []) as List).map((m) => Map<String, dynamic>.from(m)).toList();
+    incomes = ((j['incomes'] ?? []) as List).map((m) => Map<String, dynamic>.from(m)).toList();
   }
 
   Future<void> load() async {
@@ -110,7 +116,7 @@ class Store extends ChangeNotifier {
 
   Future<void> resetAll() async {
     identities = []; habits = []; log = {}; skips = {}; reviews = {}; letter = ''; startDate = '';
-    bodyProfile = {}; meals = {}; water = {}; bodyLog = []; sessions = []; aiText = {}; budget = {}; expenses = []; savingsGoals = [];
+    bodyProfile = {}; meals = {}; water = {}; bodyLog = []; sessions = []; aiText = {}; budget = {}; expenses = []; savingsGoals = []; yearGoals = []; incomes = [];
     await _save();
   }
 
@@ -185,6 +191,22 @@ class Store extends ChangeNotifier {
 
   void setBudget(Map<String, dynamic> b) { budget = b; _save(); }
   void addExpense(Map<String, dynamic> e) { expenses.add(e); _save(); }
+  void addYearGoal(Map<String, dynamic> g) { yearGoals.add(g); _save(); }
+  void removeYearGoal(String id) { yearGoals.removeWhere((g) => g['id'] == id); _save(); }
+  void updateYearGoal(String id, Map<String, dynamic> patch) {
+    for (final g in yearGoals) { if (g['id'] == id) g.addAll(patch); }
+    _save();
+  }
+  void toggleGoalMonth(String id, int i) {
+    for (final g in yearGoals) {
+      if (g['id'] == id) { final d = List<bool>.from(g['done']); d[i] = !d[i]; g['done'] = d; }
+    }
+    _save();
+  }
+  void addIncome(Map<String, dynamic> e) { incomes.add(e); _save(); }
+  void removeIncome(String id) { incomes.removeWhere((e) => e['id'] == id); _save(); }
+  bool get earnedToday => incomes.any((e) => e['date'] == dayKey(DateTime.now()));
+
   void addSavingsGoal(Map<String, dynamic> g) { savingsGoals.add(g); _save(); }
   void removeSavingsGoal(String id) { savingsGoals.removeWhere((g) => g['id'] == id); _save(); }
   void moveSavings(String id, num delta) {

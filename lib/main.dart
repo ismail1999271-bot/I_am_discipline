@@ -12,6 +12,7 @@ import 'calorie.dart';
 import 'health.dart';
 import 'theme.dart';
 import 'motivation.dart';
+import 'plan.dart';
 
 final store = Store();
 final coach = Coach();
@@ -181,17 +182,17 @@ class _HomeState extends State<Home> {
         body: SafeArea(child: ListenableBuilder(listenable: store,
             builder: (_, __) => [
                   TodayPage(key: UniqueKey()),
+                  PlanPage(key: UniqueKey()),
                   HealthPage(), // const değil: premium değişince yeniden çizilsin
                   ProgressPage(key: UniqueKey()),
-                  const CoachPage(),
                   MePage(key: UniqueKey()),
                 ][tab])),
         bottomNavigationBar: NavigationBar(selectedIndex: tab, onDestinationSelected: (i) => setState(() => tab = i),
             destinations: const [
               NavigationDestination(icon: Icon(Icons.today), label: 'Bugün'),
+              NavigationDestination(icon: Icon(Icons.flag_outlined), label: 'Plan'),
               NavigationDestination(icon: Icon(Icons.local_fire_department_outlined), label: 'Yaşam'),
               NavigationDestination(icon: Icon(Icons.insights), label: 'İlerleme'),
-              NavigationDestination(icon: Icon(Icons.psychology), label: 'Koç'),
               NavigationDestination(icon: Icon(Icons.person_outline), label: 'Ben'),
             ]),
       );
@@ -217,6 +218,7 @@ class TodayPage extends StatelessWidget {
       votes['Fit'] = (votes['Fit'] ?? 0) + 2;
     }
     if (store.premium && store.workedOutToday) votes['Fit'] = (votes['Fit'] ?? 0) + 2;
+    if (store.earnedToday) votes['Girişimci'] = (votes['Girişimci'] ?? 0) + 2;
     if (store.premium && store.budgetOnTrackToday) votes['Disiplinli'] = (votes['Disiplinli'] ?? 0) + 1;
     final routines = store.routinesToday();
     return ListView(padding: const EdgeInsets.all(16), children: [
