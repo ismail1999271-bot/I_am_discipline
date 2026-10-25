@@ -12,7 +12,7 @@ Son kontrol: 25 Ekim 2026 (Claude). Her görevi Grok'a AYRI sohbette ver: önce 
 | 4 | Uygulama sesi | ✅ | docs/uygulama_sesi.json — Claude uygulamaya bağlayacak |
 | 5 | 15 başarı paketi | ✅ | docs/basari_paketleri.dart — Claude uygulamaya bağlayacak |
 | 6–8 | Rakip / mağaza / uzman pazarı | ✅ | docs/ altında |
-| 9 | Motivasyon sözleri 200 | ❌ | 109 var |
+| 9 | Motivasyon sözleri 200 | ✅ | 200 söz, özgün, max 90 karakter |
 | 10 | Terfi + ceza mesajları | ✅ | terfi 11×3, ceza 10, max 90 |
 | 11 | Kampanya metinleri | ❌ | yeni |
 | 12 | Heykeller + ikon | ✅ | splash_male.jpg, splash_female.jpg 1290×2796, icon.png 1024 |
