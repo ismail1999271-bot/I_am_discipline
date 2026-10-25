@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:i_am_disiplin/services/store.dart';
 import 'package:i_am_disiplin/services/xp_engine.dart';
@@ -82,8 +83,8 @@ class SettingsScreen extends StatelessWidget {
                   ),
                 ),
               const SizedBox(height: 22),
-              const SectionTitle('PREMIUM TEST'),
-              SwitchListTile(
+              if (kDebugMode) const SectionTitle('PREMIUM TEST'),
+              if (kDebugMode) SwitchListTile(
                 contentPadding: EdgeInsets.zero,
                 title: const Text('Kilidi aç', style: TextStyle(fontWeight: FontWeight.w800)),
                 subtitle: const Text('Ödeme yok. Sadece kilit bayrağı.'),
