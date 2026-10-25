@@ -1,5 +1,6 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:i_am_disiplin/models/app_models.dart';
 import 'package:i_am_disiplin/services/store.dart';
 import 'package:i_am_disiplin/services/xp_engine.dart';
 import 'package:i_am_disiplin/widgets/common.dart';

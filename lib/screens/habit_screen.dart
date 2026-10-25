@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:i_am_disiplin/data/catalog.dart';
-import 'package:i_am_disiplin/models/app_models.dart';
 import 'package:i_am_disiplin/screens/habit_form_screen.dart';
 import 'package:i_am_disiplin/services/store.dart';
 import 'package:i_am_disiplin/services/xp_engine.dart';

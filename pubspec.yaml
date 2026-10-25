@@ -3,7 +3,7 @@ description: Ben Disiplinim — rütbe tabanlı disiplin uygulaması
 publish_to: none
 version: 1.0.0+1
 environment:
-  sdk: ">=3.27.0 <4.0.0"
+  sdk: ">=3.6.0 <4.0.0"
 dependencies:
   flutter:
     sdk: flutter
@@ -26,5 +26,7 @@ flutter:
     - assets/sozler.json
     - assets/exercises.json
     - assets/programs.json
+    - assets/splash_male.jpg
+    - assets/splash_female.jpg
     - lib/exercises.json
     - lib/programs.json

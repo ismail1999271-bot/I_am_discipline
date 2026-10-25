@@ -15,7 +15,7 @@ Son kontrol: 25 Ekim 2026 (Claude). Her görevi Grok'a AYRI sohbette ver: önce 
 | 9 | Motivasyon sözleri 200 | ❌ | 109 var |
 | 10 | Terfi + ceza mesajları | ❌ | yeni |
 | 11 | Kampanya metinleri | ❌ | yeni |
-| 12 | Heykeller + ikon | ❌ | yeni |
+| 12 | Heykeller + ikon | ✅ | splash_male.jpg, splash_female.jpg 1290×2796, icon.png 1024 |
 | 13 | Gizlilik / KVKK | ❌ | taslak kısa |
 | 14 | App Store metinleri | ❌ | yeni (iPhone) |
 
