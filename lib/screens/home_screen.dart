@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:i_am_disiplin/models/app_models.dart';
+import 'package:i_am_disiplin/screens/stats_screen.dart';
 import 'package:i_am_disiplin/services/quotes.dart';
 import 'package:i_am_disiplin/services/store.dart';
 import 'package:i_am_disiplin/services/xp_engine.dart';
@@ -26,7 +27,17 @@ class HomeScreen extends StatelessWidget {
         final today = store.habitsOn(DateTime.now());
         final dropped = rankIndexFor(xp) < peak;
         return Scaffold(
-          appBar: AppBar(title: const Text('ANA')),
+          appBar: AppBar(
+            title: const Text('ANA'),
+            actions: [
+              IconButton(
+                onPressed: () => Navigator.of(context).push(
+                  MaterialPageRoute<void>(builder: (_) => const StatsScreen()),
+                ),
+                icon: const Icon(Icons.bar_chart),
+              ),
+            ],
+          ),
           body: ListView(
             padding: const EdgeInsets.fromLTRB(16, 8, 16, 24),
             children: [
