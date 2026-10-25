@@ -473,5 +473,74 @@
       "İsteksiz gün de oy sayılır.",
       "Yarın daha istekli olacaksın diye bugünü silme."
     ]
-  }
+  },
+  "terfi": {
+    "Acemi": [
+      "Acemisin. Bu küfür değil, başlangıç. Bugün bir işi bitir.",
+      "Rütbe sıfırda durmaz. Durursan sen durursun.",
+      "Tabeladaki adın henüz boş. İlk iş onu doldurur."
+    ],
+    "Er": [
+      "Ersin. Bahane bu rütbenin altında kaldı.",
+      "Bu rütbe hediye değil. Bugün kazandın.",
+      "Er oldun. Yarın da er gibi kalk."
+    ],
+    "Onbaşı": [
+      "Onbaşısın. Üç günü bahaneye bağlayamazsın.",
+      "Rütbe sende. Disiplini de sen tutacaksın.",
+      "Onbaşı başkasını değil, kendini hizaya sokar."
+    ],
+    "Çavuş": [
+      "Çavuş oldun. Emir bekleme. Emri kendine sen ver.",
+      "Bu rütbe ses ister. Sessiz gün rütbe yemez.",
+      "Çavuşluk laf değil. Tekrarlanan iştir."
+    ],
+    "Astsubay": [
+      "Astsubaysın. Disiplin his değil, karardır.",
+      "Bu rütbe duygusal gün tanımaz. Planı uygula.",
+      "Astsubay bahaneyi içeri almaz. Sen de alma."
+    ],
+    "Teğmen": [
+      "Teğmensin. Sıradan gün bu rütbeyi yer. Yeme.",
+      "Komuta çizgisi senden başlar. Bugün de öyle.",
+      "Teğmenlik niyet değil. Bitirilen gündür."
+    ],
+    "Yüzbaşı": [
+      "Yüzbaşısın. Komuta kendinden başlar, bugün de.",
+      "Bu rütbe kalabalığa değil, kendine hesap sorar.",
+      "Yüzbaşı zor günde de aynı saatte işini yapar."
+    ],
+    "Binbaşı": [
+      "Binbaşısın. Zayıf günün bahanesi yok. Planın var.",
+      "Bu rütbe tempo ister. Tempo bugün de sürer.",
+      "Yoruldunsa ölçeği küçült. İşi boş bırakma."
+    ],
+    "Albay": [
+      "Albaysın. Kalabalık uyurken sen bitirirsin.",
+      "Bu rütbe vitrin değil. Kapanan günlerin toplamı.",
+      "Albay, bir gün kaçar diye rütbesini eğmez."
+    ],
+    "Komutan": [
+      "Komutansın. Kaçacak yerin yok. Zirve burası.",
+      "Komutan başkasını değil, kendi gününü yönetir.",
+      "Bu rütbe alkış istemez. Yarınki işi ister."
+    ],
+    "Efsane": [
+      "Efsanesin. İsim değil. Bıraktığın iz.",
+      "Efsane rütbesi dinlenme izni değildir.",
+      "Buraya kadar gelen, bugünü de boş bırakmaz."
+    ]
+  },
+  "ceza": [
+    "Üç gün boş. Eksi yüz XP. Rütben duruyor, sen durma.",
+    "Ceza kesildi. Bahane değil, geri dönüş işe yarar.",
+    "Üç boş gün bir çizgi çizdi. Bugün o çizgiyi sil.",
+    "Eksi yüz. Acıtmadıysa henüz uyanmadın. Kalk.",
+    "Seri düştü, XP düştü. Karakterin düşmek zorunda değil.",
+    "Üç gün yoktun. Kapı açık. Bugün gir.",
+    "Ceza tabelada. Silmek için bir iş yeter, nutuk değil.",
+    "Eksi yüz XP bir uyarıdır, bir son değil.",
+    "Boş günler birikti. Bugün mini hedefi kapat, geri dön.",
+    "Rütbeni kimse almadı. Üç günü sen boş bıraktın. Doldur."
+  ]
 }
