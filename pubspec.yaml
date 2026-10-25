@@ -1,16 +1,21 @@
 name: i_am_disiplin
-description: Kimlik odaklı alışkanlık uygulaması
+description: Ben Disiplinim — rütbe tabanlı disiplin uygulaması
 publish_to: none
-version: 0.7.0+1
+version: 1.0.0+1
 environment:
-  sdk: ">=3.3.0 <4.0.0"
+  sdk: ">=3.27.0 <4.0.0"
 dependencies:
   flutter:
     sdk: flutter
-  shared_preferences: ^2.2.3
+  flutter_localizations:
+    sdk: flutter
+  shared_preferences: ^2.3.2
   http: ^1.2.1
   flutter_local_notifications: ^17.2.2
   timezone: ^0.9.4
+  fl_chart: ^1.2.0
+  table_calendar: ^3.2.0
+  intl: ^0.20.2
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -18,3 +23,5 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/sozler.json
