@@ -18,6 +18,17 @@ Veri yalnızca cihazda durur (`SharedPreferences`, anahtar `bd_state_v1`). Backe
 - Film listesi: izlenecek / izlenen, 1–10 puan, not.
 - Her gün ana ekranda sert bir söz (`assets/sozler.json`).
 - Premium kilit: kalori ve makro, diyetisyen öğün planı, antrenör programları ve kas grupları. 3D animasyon yer tutucu.
+- 300 yiyecek (`lib/data/foods.dart`). Kalori, makro ile uyumludur.
+- 80 hareket ve 10 program (`lib/exercises.json`, `lib/programs.json`).
+
+## İçerik dosyaları
+
+- 300 yemek satırı: `docs/gorev1_yemekler.dart`
+- 80 hareket ve 10 program: `lib/exercises.json`, `lib/programs.json` (aynı dosyalar `assets/` altında da durur)
+- Uygulama sesi: `docs/uygulama_sesi.json`
+- 15 başarı paketi: `docs/basari_paketleri.dart` (eski `Habit` şeması; uygulamanın kendi paketleri `lib/data/catalog.dart`)
+- Rakip, mağaza, uzman: `docs/rakip_analizi.md`, `docs/magaza_pazarlama.md`, `docs/uzman_pazar.md`
+
 
 ## Kurulum
 
