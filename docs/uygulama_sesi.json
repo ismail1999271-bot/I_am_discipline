@@ -1,19 +1,477 @@
 {
   "kimlik_cumleleri": {
-    "Okuyan": ["Bugünkü 10 sayfa, okuyan biri olduğunun kanıtı.", "Her sayfa seni daha bilgili yapıyor.", "Okumak zihnin için en iyi yatırım.", "Bugün de okudun, kimliğin güçlendi.", "Kitaplar seninle konuşuyor."],
-    "Fit": ["Bugünkü hareket, fit bir bedenin temeli.", "Vücudun sana teşekkür ediyor.", "Her antrenman seni daha güçlü kılıyor.", "Fit olmak bir seçim, bugün seçtin.", "Enerjin artıyor."],
-    "Dil bilen": ["Bugünkü kelimeler, yeni bir dünyanın anahtarı.", "Dil öğrenmek zihni açar.", "Her kelime seni daha global yapıyor.", "Dil bilen biri oluyorsun.", "Pratik mükemmelleştirir."],
-    "Üreten": ["Bugünkü üretim, geleceğinin temeli.", "Yaratmak seni özgür kılar.", "Her çalışma seni daha üretken yapıyor.", "Üreten biri olmak bir alışkanlık.", "Küçük adımlar büyük eserler."],
-    "Sakin zihin": ["Bugünkü nefes, zihnini sakinleştirdi.", "Sakinlik güçtür.", "Meditasyon seninle.", "Zihin sakin, beden güçlü.", "İç huzur dış başarıyı getirir."],
-    "Girişimci": ["Bugünkü çalışma, girişimin için bir adım.", "Fikirler eylemle büyür.", "Girişimci olmak cesaret ister, sen gösterdin.", "Her gün daha yakınsın.", "Başarı alışkanlıkla gelir."],
-    "Disiplinli": ["Bugünkü disiplin, yarınki özgürlük.", "Disiplin senin süper gücün.", "Tutarlılık her şeyi değiştirir.", "Disiplinli olmak bir kimlik.", "Sen seçtin, sen yaptın."]
+    "Okuyan": [
+      "Bugünkü on sayfa, okuyan biri olduğunun kanıtı.",
+      "Bir sayfa da sayılır. Sıfır sayfa sayılmaz.",
+      "Kitabı açman, kimliğini hatırlaman demek.",
+      "Not alırsan okudukların sende kalır.",
+      "Kalın kitap korkutmasın. Bugünkü parça yeter.",
+      "Okuyan insan bahaneyi rafa koyar.",
+      "Beş dakika da bir okur günüdür.",
+      "Telefonu kapat, sayfayı aç.",
+      "Yarınki sen, bugün okuyan senden doğar.",
+      "Bitirmen şart değil. Başlaman kimliktir.",
+      "Aynı saatte açılan kitap, alışkanlık olur.",
+      "Zor günün mini hedefi: tek sayfa.",
+      "Okumak kaçış değil, inşaattır.",
+      "Altını çizdiğin cümle, senin cümlen olur.",
+      "Bugün okuduysan, oyunu kullandın."
+    ],
+    "Fit": [
+      "Bugünkü hareket, fit biri olduğunun kanıtı.",
+      "Kısa antrenman da antrenmandır.",
+      "Ter dökmen, kimliğini seçmen demek.",
+      "Ağrı ile zorluğu karıştırma. Form önce.",
+      "Bir tur da sayılır. Sıfır tur sayılmaz.",
+      "Fit olmak ceza değil, tekrar işidir.",
+      "Merdiven de bir antrenman sayılır.",
+      "Bugün ağır hissetsen de mini hedef duruyor.",
+      "Vücudun yarını, bugünkü seçimini hatırlar.",
+      "Isınmadan yüklenme. Akıllı olan güçlenir.",
+      "Yürüyüş de fitness kimliğine oy verir.",
+      "Aynaya değil, takvime bak.",
+      "Bitkin günün planı: on dakika.",
+      "Kas değil, sözünün eri olmak hedef.",
+      "Bugün hareket ettiysen, kimliğin yerinde."
+    ],
+    "Dil bilen": [
+      "Bugünkü beş kelime, dil bilen biri olduğunun kanıtı.",
+      "Bir cümle de dildir. Sessizlik değil.",
+      "Yanlış konuşman, öğrenmenin parçası.",
+      "Kulağın da çalışsın. Beş dakika dinle.",
+      "Kelime kartı, kimliğine küçük bir oy.",
+      "Mükemmel aksan bekleme. Tekrar bekle.",
+      "Bugün bir mesajı o dilde yaz.",
+      "Unuttuğun kelimeyi tekrar yazman yeter.",
+      "Dil, her gün küçük bir tuğla ister.",
+      "Mini hedef: üç kelime. Utanma.",
+      "Şarkı sözü de ders sayılır.",
+      "Çeviri uygulamasına sığınmadan bir cümle dene.",
+      "Yarın akıcı olmazsın. Bugün devam edersin.",
+      "Sesli tekrarın, sessiz ezberden güçlüdür.",
+      "Bugün o dile dokunduysan, kimliğin büyüdü."
+    ],
+    "Üreten": [
+      "Bugünkü taslak, üreten biri olduğunun kanıtı.",
+      "Çirkin ilk sürüm, boş sayfadan iyidir.",
+      "On dakika üretim de üretimdir.",
+      "Beğenilmek için değil, bitirmek için otur.",
+      "Silmen de işin parçası. Kaçman değil.",
+      "Küçük parça yayınlamak, büyük hayalden gerçektir.",
+      "Masanın başına geçmen kimliktir.",
+      "İlham bekleme. Saat bekle.",
+      "Bugün bir paragraf, yarın bir eser.",
+      "Mini hedef: tek cümle. Yine de senin.",
+      "Düzenlemek de üretmektir.",
+      "Başkasının işine bakıp kendi işini erteleme.",
+      "Hata, üretmeyen insanın bahanesi olmasın.",
+      "Kaydet. Kafanda kalan iş, iş değildir.",
+      "Bugün bir şey çıkardıysan, oyunu kullandın."
+    ],
+    "Sakin zihin": [
+      "Bugünkü nefes, sakin zihin olduğunun kanıtı.",
+      "Bir dakika durmak da pratiktir.",
+      "Telefonu uzağa koyman, zihnine yer açar.",
+      "Hızlı düşünmek zorunda değilsin.",
+      "Mini hedef: üç derin nefes.",
+      "Sakin olmak boş olmak değildir.",
+      "Yürüyüş de zihni toplar.",
+      "Uykuyu ertelememek, nazik bir güçtür.",
+      "Bugün bağırmadan geçtiysen, bu da iş.",
+      "Ekranı kapatman, kendine dönmendir.",
+      "Gergin günün planı küçülsün, silinmesin.",
+      "Omuzlarını indir. Bu da bir tekrar.",
+      "Sessiz beş dakika, kimliğine oy verir.",
+      "Yarına aynı yükü taşımak zorunda değilsin.",
+      "Bugün yavaşladıysan, hedef tuttu."
+    ],
+    "Girişimci": [
+      "Bugünkü küçük satış denemesi, girişimci olduğunun kanıtı.",
+      "Bir mesaj atman, hayal kurmandan ileridir.",
+      "Müşteriyi bekleme. Bir kişiye yaz.",
+      "Hesap bakmak da işin parçası.",
+      "Mini hedef: tek teklif cümlesi.",
+      "Mükemmel logo, geciken işi kurtarmaz.",
+      "Bugün bir rakam yaz. His değil.",
+      "Red cevap da veridir. Sessizlik değil.",
+      "On dakika satış işi, on saat düşünceden güçlü.",
+      "Fiyatını söylemekten çekinme.",
+      "Not almadığın fikir, fikir değildir.",
+      "Başkasının başarısını izlemek senin ciron değil.",
+      "Küçük gelir de girişimdir.",
+      "Yarın büyük olmayacak. Bugün temas kur.",
+      "Bugün işine dokunduysan, kimliğin duruyor."
+    ],
+    "Disiplinli": [
+      "Bugünkü işaret, disiplinli biri olduğunun kanıtı.",
+      "Kolay gün yok. Küçük iş var.",
+      "Bir maddeyi bitirmen, listenin tamamından değerlidir.",
+      "Saat geldiyse, ruh halin oy kullanmaz.",
+      "Mini hedef de disiplin sayılır.",
+      "Ertelemek plan değil, kaçıştır.",
+      "Aynı saatte başlaman, karakterindir.",
+      "Bitmeyen işi yarına şikayet etme. Küçült.",
+      "Disiplin bağırmak değildir. Yerine geçmektir.",
+      "Bugün kaçmadıysan, kazandın.",
+      "Bahaneyi yazma. İşi yaz.",
+      "Kimse seni denetlemiyor. Sen denetliyorsun.",
+      "Zor hissetmek, iptal sebebi değildir.",
+      "Kısa ve bitmiş iş, uzun niyetten üstündür.",
+      "Bugün sözünü tuttuysan, kimliğin net."
+    ]
   },
   "bildirimler": [
-    {"baslik": "Bugün de başla", "metin": "Küçük bir adım, büyük bir değişim."},
-    {"baslik": "Kimliğin güçleniyor", "metin": "Bugünkü oylar seni daha iyi yapıyor."},
-    {"baslik": "Serin devam ediyor", "metin": "Tutarlılık her şeyi değiştirir."}
+    {
+      "baslik": "Bugün küçük başla",
+      "metin": "Bir iş seç. Bitir. İşaretle."
+    },
+    {
+      "baslik": "Saatin geldi",
+      "metin": "Rutin seni bekliyor. İki dakika yeter."
+    },
+    {
+      "baslik": "Kimliğin kapıda",
+      "metin": "Bugün olmak istediğin insana bir oy ver."
+    },
+    {
+      "baslik": "Mini hedef duruyor",
+      "metin": "Kötü gün de sayılır. Sıfıra düşme."
+    },
+    {
+      "baslik": "Sayfayı aç",
+      "metin": "On sayfa değil. Bir sayfa da olur."
+    },
+    {
+      "baslik": "Hareket zamanı",
+      "metin": "Kısa tur. Form bozulmasın."
+    },
+    {
+      "baslik": "Kelime vakti",
+      "metin": "Üç kelime yaz. Dil böyle büyür."
+    },
+    {
+      "baslik": "Üret ve kaydet",
+      "metin": "Taslak çirkin olabilir. Boş kalamaz."
+    },
+    {
+      "baslik": "Nefes arası",
+      "metin": "Üç nefes. Sonra işe dön."
+    },
+    {
+      "baslik": "Bir mesaj at",
+      "metin": "Girişim beklemez. Bir kişiye yaz."
+    },
+    {
+      "baslik": "Sözünü hatırla",
+      "metin": "Bugünkü madde hâlâ açık."
+    },
+    {
+      "baslik": "Su ve devam",
+      "metin": "Bardağı doldur. Sonra listeye dön."
+    },
+    {
+      "baslik": "Akşam kapanışı",
+      "metin": "Günü boş geçirme. Bir işaret koy."
+    },
+    {
+      "baslik": "Sabah seçimi",
+      "metin": "Telefon değil. İlk işin kimliğin olsun."
+    },
+    {
+      "baslik": "Seri nazik büyür",
+      "metin": "Mükemmel gün arama. Devam et."
+    },
+    {
+      "baslik": "On dakika yeter",
+      "metin": "Zaman yoksa süreyi kıs. İşi silme."
+    },
+    {
+      "baslik": "Yürüyüş hatırlatması",
+      "metin": "Dışarı çık. Adımların da oy."
+    },
+    {
+      "baslik": "Okuma köşesi",
+      "metin": "Kitap duruyor. Bir paragraf aç."
+    },
+    {
+      "baslik": "Dil kulağı",
+      "metin": "Beş dakika dinle. Tekrar et."
+    },
+    {
+      "baslik": "Masanın başına",
+      "metin": "İlham gelmeden de başlanır."
+    },
+    {
+      "baslik": "Omuzlarını indir",
+      "metin": "Gerginsen mini nefes hedefi duruyor."
+    },
+    {
+      "baslik": "Tek teklif",
+      "metin": "Fiyatını yaz. Göndermeden bitmez."
+    },
+    {
+      "baslik": "Liste sade",
+      "metin": "Üç maddeden fazlasını bugün taşıma."
+    },
+    {
+      "baslik": "Öğle kontrolü",
+      "metin": "Sabah kaçtıysa öğlen mini hedef var."
+    },
+    {
+      "baslik": "Formu koru",
+      "metin": "Ağır his yorulmak değildir. Yükü indir."
+    },
+    {
+      "baslik": "Notunu aç",
+      "metin": "Kafandaki işi yaz. Unutma."
+    },
+    {
+      "baslik": "Ekranı bırak",
+      "metin": "Beş dakika sessiz. Zihin buna da oy verir."
+    },
+    {
+      "baslik": "Müşteri notu",
+      "metin": "Bir isim seç. Bugün ona dokun."
+    },
+    {
+      "baslik": "Erken kapanış",
+      "metin": "Geceyi uzatma. Yarınki seni koru."
+    },
+    {
+      "baslik": "İşaret beklemez",
+      "metin": "Kimse sormayacak. Sen işaretle."
+    },
+    {
+      "baslik": "Kısa tur",
+      "metin": "Evde üç hareket. Sonra duş."
+    },
+    {
+      "baslik": "Cümle kur",
+      "metin": "Bugünkü dil hedefi bir cümle."
+    },
+    {
+      "baslik": "Taslağı kaydet",
+      "metin": "Silmeden önce bir kopya bırak."
+    },
+    {
+      "baslik": "Su molası",
+      "metin": "Bir bardak. Gözlerin de dinlensin."
+    },
+    {
+      "baslik": "Tek rakam",
+      "metin": "Geliri ya da gideri yaz. His değil."
+    },
+    {
+      "baslik": "Nazik disiplin",
+      "metin": "Kendine bağırma. İşi küçült ve yap."
+    },
+    {
+      "baslik": "Kitap beş dakika",
+      "metin": "Uykudan önce bir sayfa yeter."
+    },
+    {
+      "baslik": "Isın ve başla",
+      "metin": "Soğuk kasla yüklenme."
+    },
+    {
+      "baslik": "Kelime tekrarı",
+      "metin": "Dünkü üç kelimeyi yeniden söyle."
+    },
+    {
+      "baslik": "Paragraf vakti",
+      "metin": "Bir paragraf. Düzen sonra gelir."
+    },
+    {
+      "baslik": "Yürüyüş nefes",
+      "metin": "Dışarıda üç dakika yavaşla."
+    },
+    {
+      "baslik": "Teklif taslağı",
+      "metin": "Mükemmel olmasın. Gönderilebilir olsun."
+    },
+    {
+      "baslik": "Günü kapat",
+      "metin": "Yarınki ilk işi bu akşam yaz."
+    },
+    {
+      "baslik": "Mini spor",
+      "metin": "Şınav ya da yürüyüş. İkisi de olur."
+    },
+    {
+      "baslik": "Dinleme vakti",
+      "metin": "Kulaklık tak. Bir dakika bile."
+    },
+    {
+      "baslik": "Kaydet ve çık",
+      "metin": "Açık sekme iş bitirmez."
+    },
+    {
+      "baslik": "Sakin başlangıç",
+      "metin": "Acele etme. İlk nefes, sonra madde."
+    },
+    {
+      "baslik": "Satış değil temas",
+      "metin": "Tanıdığın birine hal hatır ve teklif."
+    },
+    {
+      "baslik": "Söz küçük olsun",
+      "metin": "Tutamayacağın maddeyi sil."
+    },
+    {
+      "baslik": "Akşam yürüyüşü",
+      "metin": "Yemeği sindir. On dakika yürü."
+    },
+    {
+      "baslik": "Sayfa işareti",
+      "metin": "Kaldığın yeri koy. Yarın çabuk başla."
+    },
+    {
+      "baslik": "Hafif tempo",
+      "metin": "Bugün tempo düşük olabilir. Sıfır olmasın."
+    },
+    {
+      "baslik": "Yeni cümle",
+      "metin": "Ezber değil. Kendi cümlen."
+    },
+    {
+      "baslik": "Yayınlama korkusu",
+      "metin": "Bir kişiye göster. Bu da üretim."
+    },
+    {
+      "baslik": "Ekran dışı",
+      "metin": "Bildirimleri kapat. On dakika sende."
+    },
+    {
+      "baslik": "Hesap bak",
+      "metin": "Bir harcama yaz. Kaçırma."
+    },
+    {
+      "baslik": "Yarın daha kolay",
+      "metin": "Bugün mini biterse yarın ağırlaşır."
+    },
+    {
+      "baslik": "Son çağrı",
+      "metin": "Gün bitmeden bir oy koy."
+    },
+    {
+      "baslik": "İyi geceler işi",
+      "metin": "Yarınki alarm, bu geceki sözündür."
+    },
+    {
+      "baslik": "Bir oy daha",
+      "metin": "Gün kapanmadan mini hedefi işaretle."
+    }
   ],
-  "seri_kirildi": ["Sorun değil, yarın devam edersin.", "Bir gün kaçırmak seriyi bitirmez, sen bitirmezsin.", "Geri dönmek de bir zaferdir."],
-  "rozet": {"7": ["İlk hafta tamam!"], "21": ["Alışkanlık oluşuyor!"], "66": ["Kimlik değişti!"], "100": ["Efsane seviye!"]},
-  "kacirma": {"Yorgun": ["Sadece minimumu yap, yeter."], "Vakit yok": ["2 dakika yeter, başla."], "Unuttum": ["Hatırlatıcıyı aç."], "İsteksiz": ["Sadece başla, gerisi gelir."]}
+  "seri_kirildi": [
+    "Seri durdu. Kimliğin durmadı. Yarın mini hedefle dön.",
+    "Bir gün kaçtı. Alışkanlık gücün yavaş iner, silinmez.",
+    "Kendini suçlama. Küçük hedef hâlâ açık.",
+    "Kırılan seri, biten insan demek değil.",
+    "Yarın aynı saatte, daha küçük bir adım yeter.",
+    "Kaçırdığın gün veri. Yeni başlangıç da veri.",
+    "Sıfırlanmadın. Sadece tempo düştü.",
+    "Nazik ol. Sonra takvime bir işaret koy.",
+    "Bu bir karakter sınavı değil. Bir gün.",
+    "Geri dönüş bugün de olabilir. Mini yeter.",
+    "Seri sayıydı. Kimliğin hâlâ senin seçimin.",
+    "Utanma. Uygulamayı açman bile dönüştür.",
+    "Zor günler olur. Plan küçülür, silinmez.",
+    "Yarınki ilk işi şimdi yaz. Bu kadar.",
+    "Kaçan günü telafi diye büyütme. Normale dön.",
+    "Güç yavaş düşer. Düzenli mini onu tutar.",
+    "Bugün yeniden başlamak, hiç kaçmamaktan daha olgun.",
+    "Seri kırıldı diye kimliğini değiştirme.",
+    "Bir nefes, bir madde, bir işaret. Yeter.",
+    "Dönüş küçük olsun ki yarın da gelebilesin."
+  ],
+  "rozet": {
+    "7": [
+      "Yedi gün. Bu artık tesadüf değil.",
+      "Bir hafta boyunca kimliğine oy verdin.",
+      "Yedi işaret. Ritmin oluştu.",
+      "İlk hafta bitti. Mini günler de sayıldı.",
+      "Yedi gün aynı yöne baktın.",
+      "Haftalık rozet senin. Yarın da küçük başla.",
+      "Bir haftalık söz. Güven büyüdü.",
+      "Yedi gün: kısa ama gerçek."
+    ],
+    "21": [
+      "Yirmi bir gün. Alışkanlık sesini duyurdu.",
+      "Üç hafta. Kimlik artık misafir değil.",
+      "Yirmi bir işaret. Zor günler de vardı.",
+      "Bu rozet inat değil, tekrar.",
+      "Üç haftalık ritim kuruldu.",
+      "Yirmi bir gün sonra bırakmak daha zor, iyi ki.",
+      "Kimliğin üç haftadır masa başında.",
+      "Rozet geldi. Yarın yine mini yeter."
+    ],
+    "66": [
+      "Altmış altı gün. Bu karakter işi.",
+      "İki aydan uzun. Sen devam eden kişisin.",
+      "Altmış altı işaret. Saygı duyulası bir iz.",
+      "Bu rozet bağırmaz. Sessizce durur.",
+      "Uzun seri, nazik disiplinle geldi.",
+      "Altmış altı gün: artık 'deniyorum' deme.",
+      "Kimliğin bu sürede yer etti."
+    ],
+    "100": [
+      "Yüz gün. Az insan buraya gelir.",
+      "Yüz işaret. Bu bir hayat parçası.",
+      "Yüz günlük rozet. Gösteriş değil, iz.",
+      "Buraya mini günlerle de gelinir. Geldin.",
+      "Yüz gün sonra kimlik tartışılmaz.",
+      "Yüzüncü gün. Yarın da bir işaret.",
+      "Uzun yolun rozeti sende."
+    ]
+  },
+  "kacirma": {
+    "Yorgun": [
+      "Hedefi yarıya indir. İptal etme.",
+      "On dakika zamanlayıcı kur. Bitince kalkabilirsin.",
+      "Yatmadan önce sadece mini hedefi yap.",
+      "Ağır işi yarına yaz, küçüğünü bugün bitir.",
+      "Ayakta üç dakika. Oturarak da sayılır.",
+      "Su iç, sonra tek madde.",
+      "Yorgunken form bozma. Yükü indir.",
+      "Erken yatmayı da iş olarak işaretle.",
+      "Beş dakika. Sonra yeniden karar ver.",
+      "Yarın ilk işi bu gece tek cümle yaz."
+    ],
+    "Vakit yok": [
+      "İşi iki dakikaya böl.",
+      "Toplu taşıma veya çay demlenirken yap.",
+      "Takvimde on dakikalık boşluk ara.",
+      "Mükemmel saati bekleme. Elindeki boşluğu kullan.",
+      "Tek kelime, tek sayfa, tek tur.",
+      "Öğle arasında mini hedef koy.",
+      "Listeyi üçe indir.",
+      "Başka işin içine iliştir: yürürken dinle.",
+      "Yarın sabah ilk on dakikayı ayır, bu gece yaz.",
+      "Vaktin yoksa süreyi kıs. Kimliği silme."
+    ],
+    "Unuttum": [
+      "Hatırlatıcıyı bu işin saatine kur.",
+      "Telefonun ana ekranına tek madde koy.",
+      "Aynı saatte aynı yerde yap.",
+      "Dünkü kaçışı bugün suçlama. Alarmı düzelt.",
+      "İşaret kutusunu görünür yere al.",
+      "Bir arkadaşa sadece 'yaptım' diye yaz.",
+      "Akşam kontrol bildirimine izin ver.",
+      "Alışkanlığı mevcut bir işe bağla: çaydan sonra.",
+      "Unutulan gün mini ile kapanabilir.",
+      "Yarınki alarmı şimdi kur."
+    ],
+    "İsteksiz": [
+      "İki dakika kuralı. İstemezsen bırakabilirsin.",
+      "En küçük hâli yap. Gerisi isteğe bağlı.",
+      "Sebebini bir cümle yaz, sonra miniye geç.",
+      "Beğenmek zorunda değilsin. Başlamak yeter.",
+      "Ortamı değiştir. Başka oda, aynı iş.",
+      "Müzik aç, süreyi kıs.",
+      "İsteğin gelmesini bekleme. Saat gelsin.",
+      "Bitmiş hali hayal etme. İlk hareketi yap.",
+      "İsteksiz gün de oy sayılır.",
+      "Yarın daha istekli olacaksın diye bugünü silme."
+    ]
+  }
 }
