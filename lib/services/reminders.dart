@@ -8,10 +8,12 @@ final _plugin = FlutterLocalNotificationsPlugin();
 bool _ready = false;
 
 Future<void> initReminders() async {
+  if (kIsWeb) return; // web'de bildirim yok, uygulama yine çalışır
   tzdata.initializeTimeZones();
   tz.setLocalLocation(tz.getLocation('Europe/Istanbul'));
   const android = AndroidInitializationSettings('@mipmap/ic_launcher');
-  const init = InitializationSettings(android: android);
+  const darwin = DarwinInitializationSettings();
+  const init = InitializationSettings(android: android, iOS: darwin);
   await _plugin.initialize(init);
   final androidPlugin = _plugin.resolvePlatformSpecificImplementation<AndroidFlutterLocalNotificationsPlugin>();
   await androidPlugin?.requestNotificationsPermission();
