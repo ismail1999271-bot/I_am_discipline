@@ -1,65 +1,45 @@
-# I Am Disiplin — Flutter
+# Ben Disiplinim
+
+Siyah zemin, keskin köşe, altın vurgu. Alışkanlıklarını işaretle, rütbe kazan, günü kaçırma.
+
+Veri yalnızca cihazda durur (`SharedPreferences`, anahtar `bd_state_v1`). Backend yok. Ödeme yok. Premium bir kilit bayrağıdır.
+
+## Özellikler
+
+- Hazır paketler: Sabah Rutini, Sporcu, Dil Öğrenen, Okuyucu, Zihin.
+- Özel alışkanlık: ad, ikon, zorluk (normal +10 / zor +20), günler, hatırlatma saati.
+- Günlük işaret ve seri.
+- Rütbeler: Acemi, Er, Onbaşı, Çavuş, Astsubay, Teğmen, Yüzbaşı, Binbaşı, Albay, Komutan, Efsane.
+- Seri çarpanı: 7 gün x1.2, 30 gün x1.5, 90 gün x2. Gün tamamlanınca +50 XP. Aylık hedef tutunca +500 XP.
+- 3 gün üst üste hiç işaret yoksa -100 XP. Rütbe düşmez.
+- Terfi ekranı: rozet, yeni tema, sert cümle.
+- Ajanda: takvim, spor / yemek / uyku / iş, sınırsız defter.
+- Yaşam planı: birikim, bütçe, dil, vücut, yan gelir. Aylık ve yıllık. Çubuk ve grafik.
+- Film listesi: izlenecek / izlenen, 1–10 puan, not.
+- Her gün ana ekranda sert bir söz (`assets/sozler.json`).
+- Premium kilit: kalori ve makro, diyetisyen öğün planı, antrenör programları ve kas grupları. 3D animasyon yer tutucu.
 
 ## Kurulum
-1. Flutter SDK kur: https://docs.flutter.dev/get-started/install
-2. Bu klasörde:
-   flutter create . --project-name i_am_disiplin --platforms android,ios
-   flutter pub get
-   flutter run
 
-## Ollama koçu
-1. Ollama kur: https://ollama.com
-2. Model indir:  ollama pull qwen2.5:7b
-3. Çalıştır:     ollama serve
-4. Adres (lib/main.dart → Coach(host: ...)):
-   - Masaüstü / iOS simülatörü: http://localhost:11434
-   - Android emülatörü: http://10.0.2.2:11434
-   - Gerçek telefon: http://<bilgisayar-IP>:11434  (OLLAMA_HOST=0.0.0.0 ollama serve)
-Android'de http için AndroidManifest'e android:usesCleartextTraffic="true" ekle.
+Flutter 3.27 veya daha yeni gerekir.
 
-## Yapı
-lib/models.dart  Habit, Entry
-lib/store.dart   kayıt, seri, alışkanlık gücü, koç özeti
-lib/coach.dart   Ollama /api/generate çağrısı
-lib/main.dart    Onboarding, Bugün, İlerleme, Koç ekranları
+```bash
+flutter pub get
+flutter run
+```
 
-## Hızlı başlangıç (Windows)
-BASLAT.bat'a çift tıkla. Android klasörünü oluşturur, Android ayarlarını otomatik yapar (android_ayar.ps1),
-kodu kontrol eder, Ollama modelini indirir ve uygulamayı çalıştırır.
+Bildirim için Android 13+ izin sorar. Hatırlatma saati `Europe/Istanbul` gününe göre kurulur.
 
-## Özellikler (v0.5)
-- Onboarding: kimlik seçimi → hazır paket veya kendi alışkanlıkların → 90 gün sonraki sana mektup
-- Alışkanlık tipleri: evet/hayır, süre, miktar; her birinde "kötü gün minimumu"
-- Esnek günler: haftanın istediğin günleri (planlı olmayan gün seriyi bozmaz)
-- Rutinler: alışkanlıkları "Sabah", "Akşam" gibi gruplara bağla, adım adım rutin modu
-- Bugün: kimlik oyları, Yaptım / Mini / miktar girişi, sayaç, kaçırma sebebi, Pazar değerlendirmesi
-- Seviye sistemi: 3 slotla başla, gücü %70'i geçen her alışkanlık 1 yeni slot açar
-- İlerleme: 12 haftalık ısı haritası, alışkanlık gücü, son 30 gün tamamlama, en uzun seri, 1 yıllık projeksiyon, rozetler
-- Koç: çevrimdışı kural tabanlı tespitler + Ollama ile AI analiz (ayarlardan adres/model)
-- Ben: kimlik cümlesi, mektup, alışkanlık düzenle/sırala/arşivle/sil, hatırlatıcı,
-  ilerlemeyi paylaş (sorumluluk ortağı), yedek al / geri yükle, sıfırla
-- Düzenleme kısayolu: Bugün ekranında bir alışkanlığa uzun bas
+Açılış heykeli:
 
-## Premium (v0.6)
-- Kalori sekmesi premium'a kilitli; kilit ekranında fiyat ve özellikler var
-- 55+ Türk yemeği (porsiyon, kcal, protein/karb/yağ) — lib/food_db.dart
-- Mifflin-St Jeor ile kişisel hedef; güvenli aralık (en fazla 500 kcal açık, alt sınır 1200/1500)
-- "Yazarak ekle": serbest metni Ollama'ya gönderip JSON kalori tahmini alır
-- Hedefte kalınan gün "Fit" kimliğine +2 oy
-- Ödeme henüz bağlı değil: "Test için premium aç" butonu yayın öncesi kaldırılacak, RevenueCat bağlanacak
+1. `assets/splash_male.jpg` ve `assets/splash_female.jpg` koy.
+2. `pubspec.yaml` içindeki `flutter/assets` listesine bu iki dosyayı ekle.
+3. Dosya yoksa uygulama çökmez; siyah zemin üstünde altın çizgi figür gösterilir.
+4. Kadın seçilirse kadın görseli, erkek seçilirse erkek görseli açılır. Açılışta yazı yoktur.
 
-## Premium "Sağlık" sekmesi (v0.7)
-- Beslenme: su takibi (33 ml/kg), kalori + makro, AI haftalık yemek planı ve alışveriş listesi, "buzdolabında ne var?" tarifleri
-- Antrenman: 5 hazır program (Evde başlangıç, Salon başlangıç, Üst/Alt, 0→5 km, Sabah yogası),
-  set/tekrar/ağırlık kaydı, otomatik dinlenme sayacı, geçen seansa göre ilerleme önerisi, AI kişisel program
-- Vücut: kilo, bel, kalça kaydı ve kilo grafiği
-- Antrenman günü ve kalori hedefi günü "Fit" kimliğine +2 oy
-- Dil: "beslenme koçu / antrenman asistanı" (diyetisyen/antrenör unvanı kullanılmaz), tıbbi tavsiye uyarıları var
+## Yapılacaklar
 
-## Yol haritası (sonraki sürümler)
-- Health Connect / HealthKit ile adım ve koşu otomatik kaydı
-- Bulut yedek ve cihazlar arası senkron (Supabase)
-- Uzman pazar yeri: gerçek diyetisyen/antrenör programları, komisyon modeli (sunucu gerekir)
-- Öğün fotoğrafından kalori tahmini (görsel model)
-- Ödeme: RevenueCat ile gerçek abonelik (Google Play Billing)
-- Ana ekran widget'ı
+- 3D kas animasyonları
+- ücretsiz deneme süresi
+- mağaza ekran görüntüleri
+- sahip modu
