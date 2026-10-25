@@ -14,7 +14,7 @@ Son kontrol: 25 Ekim 2026 (Claude). Her görevi Grok'a AYRI sohbette ver: önce 
 | 6–8 | Rakip / mağaza / uzman pazarı | ✅ | docs/ altında |
 | 9 | Motivasyon sözleri 200 | ✅ | 200 söz, özgün, max 90 karakter |
 | 10 | Terfi + ceza mesajları | ✅ | terfi 11×3, ceza 10, max 90 |
-| 11 | Kampanya metinleri | ❌ | yeni |
+| 11 | Kampanya metinleri | ✅ | docs/kampanya_metinleri.md, 14 kampanya, Diyanet 2026–2030 |
 | 12 | Heykeller + ikon | ✅ | splash_male.jpg, splash_female.jpg 1290×2796, icon.png 1024 |
 | 13 | Gizlilik / KVKK | ❌ | taslak kısa |
 | 14 | App Store metinleri | ❌ | yeni (iPhone) |
