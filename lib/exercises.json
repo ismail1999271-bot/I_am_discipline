@@ -1,12 +1,1362 @@
 [
-  {"ad": "Şınav", "grup": "göğüs", "ekipman": "yok", "seviye": "başlangıç", "nasil": ["Yere yüzüstü yat", "Eller omuz genişliğinde", "Vücudu düz tutarak in-çık"], "hatalar": ["Kalça sarkması", "Dirsekleri çok açmak"], "kolay_versiyon": "Diz üstü şınav", "zor_versiyon": "Tek ayak şınav"},
-  {"ad": "Dambıl bench press", "grup": "göğüs", "ekipman": "dambıl", "seviye": "orta", "nasil": ["Sırtüstü bench'e yat", "Dambılları göğüs hizasında tut", "Yukarı it ve kontrollü indir"], "hatalar": ["Dirsekleri çok açmak"], "kolay_versiyon": "Hafif dambıl", "zor_versiyon": "Eğik bench"},
-  {"ad": "Barfiks", "grup": "sırt", "ekipman": "barfiks barı", "seviye": "orta", "nasil": ["Barı omuz genişliğinde tut", "Çeneyi barın üstüne çek", "Kontrollü indir"], "hatalar": ["Sallanmak"], "kolay_versiyon": "Destekli barfiks", "zor_versiyon": "Ağırlıklı barfiks"},
-  {"ad": "Squat", "grup": "bacak", "ekipman": "yok", "seviye": "başlangıç", "nasil": ["Ayaklar omuz genişliğinde", "Kalçayı geriye iterek in", "Dizler ayak parmaklarını geçmesin"], "hatalar": ["Dizler içe çökmesi"], "kolay_versiyon": "Sandalyeye squat", "zor_versiyon": "Goblet squat"},
-  {"ad": "Lunge", "grup": "bacak", "ekipman": "yok", "seviye": "başlangıç", "nasil": ["Bir adım öne at", "Arka diz yere yakın insin", "Ön diz 90 derece"], "hatalar": ["Diz öne çok gitmesi"], "kolay_versiyon": "Yerinde lunge", "zor_versiyon": "Yürüyen lunge"},
-  {"ad": "Glute bridge", "grup": "kalça", "ekipman": "yok", "seviye": "başlangıç", "nasil": ["Sırtüstü yat", "Kalçayı yukarı kaldır", "Üstte sık"], "hatalar": ["Bel kamburu"], "kolay_versiyon": "Tek bacak destekli", "zor_versiyon": "Tek bacak bridge"},
-  {"ad": "Plank", "grup": "karın/core", "ekipman": "yok", "seviye": "başlangıç", "nasil": ["Dirsekler üzerinde", "Vücut düz çizgi", "Karın sık"], "hatalar": ["Kalça sarkması"], "kolay_versiyon": "Diz üstü plank", "zor_versiyon": "Yan plank"},
-  {"ad": "Jumping jack", "grup": "kardiyo", "ekipman": "yok", "seviye": "başlangıç", "nasil": ["Ayakları aç-kapa", "Kolları yukarı", "Ritim tut"], "hatalar": ["Dizleri kilitlemek"], "kolay_versiyon": "Adım jack", "zor_versiyon": "Hızlı tempo"},
-  {"ad": "Downward dog", "grup": "yoga", "ekipman": "yok", "seviye": "başlangıç", "nasil": ["Eller ve ayaklar yerde", "Kalçayı yukarı kaldır", "Sırt düz"], "hatalar": ["Topuk kalkması"], "kolay_versiyon": "Diz bükük", "zor_versiyon": "Tek bacak kaldır"},
-  {"ad": "Warrior 1", "grup": "yoga", "ekipman": "yok", "seviye": "başlangıç", "nasil": ["Bir bacak önde", "Kolları yukarı", "Kalça açık"], "hatalar": ["Diz içe çökmesi"], "kolay_versiyon": "Daha kısa adım", "zor_versiyon": "Daha derin"}
+  {
+    "ad": "Şınav",
+    "grup": "göğüs",
+    "ekipman": "yok",
+    "seviye": "başlangıç",
+    "nasil": [
+      "Avuçlar omuz hizasında, vücut düz bir tahta gibi.",
+      "Dirsekleri kırk beş derece açıyla bük, göğsü yere yaklaştır.",
+      "Topuklardan iterek kolları düzelt, kalçayı düşürme."
+    ],
+    "hatalar": [
+      "Kalçayı yukarı kıvırmak beli zorlar ve göğsü devre dışı bırakır.",
+      "Dirsekleri yana açmak omzu sıkıştırır."
+    ],
+    "kolay_versiyon": "Dizler yerde şınav.",
+    "zor_versiyon": "Ayaklar yükseltilmiş şınav."
+  },
+  {
+    "ad": "Dambıl bench press",
+    "grup": "göğüs",
+    "ekipman": "dambıl",
+    "seviye": "orta",
+    "nasil": [
+      "Sırtın üstü sehpada, ayaklar yerde sabit.",
+      "Dambılları göğüs hizasına indir, dirsekler hafif kapalı.",
+      "Kürek kemiklerini sıkı tutarak dambılları yukarı it."
+    ],
+    "hatalar": [
+      "Beli sehpadan koparıp yaymak bel ağrısı yapar.",
+      "Dambılı göğsün çok altına indirmek omzu zorlar."
+    ],
+    "kolay_versiyon": "Hafif dambılla yavaş tempo.",
+    "zor_versiyon": "Her tekrarda bir saniye tepe duruşu."
+  },
+  {
+    "ad": "Halter bench press",
+    "grup": "göğüs",
+    "ekipman": "halter",
+    "seviye": "orta",
+    "nasil": [
+      "Barı göz hizasında rafdan al, bilekler düz.",
+      "Barı meme ucu hizasına kontrollü indir.",
+      "Ayak tabanından destek alarak barı aynı izden kaldır."
+    ],
+    "hatalar": [
+      "Kalçayı sehpadan kaldırmak bel için risklidir.",
+      "Barı boyuna doğru kaydırmak omzu sıkıştırır."
+    ],
+    "kolay_versiyon": "Boş barla sadece iz çalış.",
+    "zor_versiyon": "Duraklı alt pozisyon."
+  },
+  {
+    "ad": "Dambıl fly",
+    "grup": "göğüs",
+    "ekipman": "dambıl",
+    "seviye": "orta",
+    "nasil": [
+      "Sırt sehpada, dambıllar göğsün üstünde, dirsekler hafif kırık.",
+      "Kolları geniş bir kucak açar gibi yana indir.",
+      "Göğsü sıkarak dambılları tekrar üste getir, çarpıştırma."
+    ],
+    "hatalar": [
+      "Dirseği tam kilitlemek eklemi zorlar.",
+      "Çok derine inmek omuz kapsülünü zorlar."
+    ],
+    "kolay_versiyon": "Dar açıyla kısa hareket.",
+    "zor_versiyon": "Tepe noktada bir saniye sık."
+  },
+  {
+    "ad": "Makine göğüs press",
+    "grup": "göğüs",
+    "ekipman": "makine",
+    "seviye": "başlangıç",
+    "nasil": [
+      "Otur, kulplar göğüs hizasında olsun.",
+      "Kürek kemiklerini arkada birleştir, kulpları öne it.",
+      "Kontrollü geri getir, omuzları öne kaçırma."
+    ],
+    "hatalar": [
+      "Ağırlığı fırlatmak beli ve omzu zorlar.",
+      "Oturuş çok alçaksa omuz öne düşer."
+    ],
+    "kolay_versiyon": "Hafif ağırlık, tam kontrol.",
+    "zor_versiyon": "Yavaş üç saniye iniş."
+  },
+  {
+    "ad": "Eğik dambıl press",
+    "grup": "göğüs",
+    "ekipman": "dambıl",
+    "seviye": "orta",
+    "nasil": [
+      "Sehpayı yaklaşık otuz derece yatır.",
+      "Dambılları üst göğse indir, dirsekler vücuda yakın.",
+      "Yukarı iterken kürek kemikleri sabit kalsın."
+    ],
+    "hatalar": [
+      "Sehpayı çok dik yapmak omza kaydırır.",
+      "Beli yaymak bel riski doğurur."
+    ],
+    "kolay_versiyon": "Daha az eğim ve hafif dambıl.",
+    "zor_versiyon": "Tek kol dönüşümlü press."
+  },
+  {
+    "ad": "Bant göğüs açma",
+    "grup": "göğüs",
+    "ekipman": "bant",
+    "seviye": "başlangıç",
+    "nasil": [
+      "Bandı sıranın arkasında sabitle, eller önde birleşsin.",
+      "Dirsekler hafif kırıkken kolları yana aç.",
+      "Göğsü sıkarak elleri tekrar öne getir."
+    ],
+    "hatalar": [
+      "Omuzları kulağa çekmek boyun ağrısı yapar.",
+      "Bandı aniden bırakmak eklemi sarsar."
+    ],
+    "kolay_versiyon": "Daha gevşek bant.",
+    "zor_versiyon": "Tepe noktada iki saniye tut."
+  },
+  {
+    "ad": "Dar şınav",
+    "grup": "göğüs",
+    "ekipman": "yok",
+    "seviye": "orta",
+    "nasil": [
+      "Eller göğsün altında, birbirine yakın.",
+      "Dirsekleri vücuda sürterek göğsü indir.",
+      "Vücudu düz tutarak başlangıca dön."
+    ],
+    "hatalar": [
+      "Kalçanın düşmesi beli zorlar.",
+      "Dirseklerin dışa kaçması bileği eğer."
+    ],
+    "kolay_versiyon": "Dizler yerde dar şınav.",
+    "zor_versiyon": "Ayaklar birleşik dar şınav."
+  },
+  {
+    "ad": "Barfiks",
+    "grup": "sırt",
+    "ekipman": "barfiks barı",
+    "seviye": "ileri",
+    "nasil": [
+      "Avuçlar öne bakar, omuzlar kulaktan uzak.",
+      "Kürek kemiklerini indirip çeneyi barın üstüne çek.",
+      "Kontrollü sark, omuzları boşluğa bırakma."
+    ],
+    "hatalar": [
+      "Savrulmak omuz ve beli zorlar.",
+      "Yarım harekette belden tekme atmak sırtı çalıştırmaz."
+    ],
+    "kolay_versiyon": "Ayaklar yerde, barfiks barında yatay çekiş.",
+    "zor_versiyon": "Göğse çekiş."
+  },
+  {
+    "ad": "Halter eğik sıra",
+    "grup": "sırt",
+    "ekipman": "halter",
+    "seviye": "orta",
+    "nasil": [
+      "Dizler hafif kırık, sırt düz, gövde öne eğik.",
+      "Barı göbeğe doğru çek, dirsekler geriye gitsin.",
+      "Barı kontrollü indir, sırt yuvarlanmasın."
+    ],
+    "hatalar": [
+      "Sırtı yuvarlamak bel fıtığı riskini artırır.",
+      "Barı savurmak bele biner."
+    ],
+    "kolay_versiyon": "Boş bar, kısa eğim.",
+    "zor_versiyon": "Her tekrarın tepesinde iki saniye."
+  },
+  {
+    "ad": "Dambıl tek kol sıra",
+    "grup": "sırt",
+    "ekipman": "dambıl",
+    "seviye": "başlangıç",
+    "nasil": [
+      "Bir el ve diz sehpada, sırt düz.",
+      "Dambılı kalçaya doğru çek, dirsek gövdeye yakın.",
+      "Kürek kemiğini sık ve yavaş indir."
+    ],
+    "hatalar": [
+      "Gövdeyi döndürmek beli döndürür.",
+      "Omzu kulağa yükseltmek boyunu sıkar."
+    ],
+    "kolay_versiyon": "Hafif dambıl.",
+    "zor_versiyon": "Alt noktada bir saniye bekle."
+  },
+  {
+    "ad": "Superman",
+    "grup": "sırt",
+    "ekipman": "yok",
+    "seviye": "başlangıç",
+    "nasil": [
+      "Yüzüstü yat, kollar önde, bacaklar düz.",
+      "Göğüs ve bacakları aynı anda az kaldır.",
+      "Nefes vererek in, boynu kırma."
+    ],
+    "hatalar": [
+      "Çok yükseğe kalkmak beli ezer.",
+      "Nefesi tutmak baş döndürür."
+    ],
+    "kolay_versiyon": "Sadece kolları kaldır.",
+    "zor_versiyon": "Tepe noktada üç saniye tut."
+  },
+  {
+    "ad": "Makine lat çekiş",
+    "grup": "sırt",
+    "ekipman": "makine",
+    "seviye": "başlangıç",
+    "nasil": [
+      "Uyluklar pedin altında, göğüs açık.",
+      "Barı köprücük kemiğine doğru çek.",
+      "Kürekleri açarak barı yavaş bırak."
+    ],
+    "hatalar": [
+      "Arkaya aşırı yaslanmak beli zorlar.",
+      "Barı boynun arkasına almak omzu risk eder."
+    ],
+    "kolay_versiyon": "Dar tutuş yerine rahat tutuş.",
+    "zor_versiyon": "Yavaş üç saniye bırakış."
+  },
+  {
+    "ad": "Yatay barfiks",
+    "grup": "sırt",
+    "ekipman": "barfiks barı",
+    "seviye": "başlangıç",
+    "nasil": [
+      "Bar göğüs hizasında, vücut düz, topuklar yerde.",
+      "Göğsü bara çek, kürek kemiklerini birleştir.",
+      "Kollar düz olana kadar in, kalça düşmesin."
+    ],
+    "hatalar": [
+      "Kalçayı sallamak beli kullanır.",
+      "Çeneyi öne fırlatmak boyunu zorlar."
+    ],
+    "kolay_versiyon": "Daha yüksek bar, daha kolay açı.",
+    "zor_versiyon": "Ayakları yükselt."
+  },
+  {
+    "ad": "Yüzüstü kol kaldırma",
+    "grup": "sırt",
+    "ekipman": "yok",
+    "seviye": "başlangıç",
+    "nasil": [
+      "Yüzüstü yat, kollar yanlarda, avuçlar yere bakar.",
+      "Kürekleri sıkarak kolları geriye kaldır.",
+      "Boyun nötr, yavaş indir."
+    ],
+    "hatalar": [
+      "Başı yukarı kaldırmak boyun ağrısı yapar.",
+      "Hareketi belden yapmak sırtı boş bırakır."
+    ],
+    "kolay_versiyon": "Çok küçük kaldırma.",
+    "zor_versiyon": "İki saniye tepe tutuşu."
+  },
+  {
+    "ad": "Bant sıra",
+    "grup": "sırt",
+    "ekipman": "bant",
+    "seviye": "başlangıç",
+    "nasil": [
+      "Banda ayakla bas, gövde hafif öne, sırt düz.",
+      "Dirsekleri geriye çekerek bandı göbeğe getir.",
+      "Kontrollü bırak, omuzlar öne düşmesin."
+    ],
+    "hatalar": [
+      "Sırtı yuvarlamak bel riskidir.",
+      "Bandı kolla değil bel ile çekmek yanlıştır."
+    ],
+    "kolay_versiyon": "Daha hafif bant.",
+    "zor_versiyon": "Tepe noktada bekleyerek sık."
+  },
+  {
+    "ad": "Dambıl omuz press",
+    "grup": "omuz",
+    "ekipman": "dambıl",
+    "seviye": "orta",
+    "nasil": [
+      "Ayakta veya oturarak, dambıllar omuz hizasında.",
+      "Dambılları başın üstüne it, kulaklara değdirme.",
+      "Kontrollü omuz hizasına indir."
+    ],
+    "hatalar": [
+      "Beli yayarak itmek bel ağrısı yapar.",
+      "Dirsekleri çok öne almak omzu sıkıştırır."
+    ],
+    "kolay_versiyon": "Oturarak hafif dambıl.",
+    "zor_versiyon": "Tek kol dönüşümlü press."
+  },
+  {
+    "ad": "Halter omuz press",
+    "grup": "omuz",
+    "ekipman": "halter",
+    "seviye": "ileri",
+    "nasil": [
+      "Bar köprücük üstünde, dirsekler barın biraz önünde.",
+      "Başı hafif geri alıp barı baş üstüne sür.",
+      "Barı aynı izden köprücüğe indir."
+    ],
+    "hatalar": [
+      "Beli aşırı yaymak bel için tehlikelidir.",
+      "Barı başın çok önünde tutmak omzu zorlar."
+    ],
+    "kolay_versiyon": "Boş bar, oturarak.",
+    "zor_versiyon": "Alt noktada kısa duruş."
+  },
+  {
+    "ad": "Dambıl yan kaldırma",
+    "grup": "omuz",
+    "ekipman": "dambıl",
+    "seviye": "başlangıç",
+    "nasil": [
+      "Dambıllar yanda, dirsekler hafif kırık.",
+      "Kolları omuz hizasına kadar yana kaldır.",
+      "Yavaş indir, omuzları kulağa çekme."
+    ],
+    "hatalar": [
+      "Savurmak boyun ve beli kullanır.",
+      "Dirseğin üstüne çıkmak omzu sıkıştırır."
+    ],
+    "kolay_versiyon": "Çok hafif dambıl.",
+    "zor_versiyon": "Tepe noktada bir saniye."
+  },
+  {
+    "ad": "Dambıl önden kaldırma",
+    "grup": "omuz",
+    "ekipman": "dambıl",
+    "seviye": "başlangıç",
+    "nasil": [
+      "Dambıllar uyluk önünde.",
+      "Tek kolu omuz hizasına kadar öne kaldır.",
+      "Kontrollü indir, gövdeyi geriye atma."
+    ],
+    "hatalar": [
+      "Geriye yaslanmak beli zorlar.",
+      "Dambılı başın üstüne savurmak omzu zorlar."
+    ],
+    "kolay_versiyon": "İki el birlikte hafif dambıl.",
+    "zor_versiyon": "Yavaş üç saniye iniş."
+  },
+  {
+    "ad": "Bant yüz çekişi",
+    "grup": "omuz",
+    "ekipman": "bant",
+    "seviye": "başlangıç",
+    "nasil": [
+      "Bandı göz hizasında sabitle.",
+      "Dirsekler yüksek, bandı yüze doğru çek.",
+      "Kürekleri sık ve yavaş bırak."
+    ],
+    "hatalar": [
+      "Dirsekleri düşürmek hareketi bozar.",
+      "Boynu öne uzatmak ağrı yapar."
+    ],
+    "kolay_versiyon": "Daha gevşek bant.",
+    "zor_versiyon": "Tepe noktada iki saniye."
+  },
+  {
+    "ad": "Makine omuz press",
+    "grup": "omuz",
+    "ekipman": "makine",
+    "seviye": "başlangıç",
+    "nasil": [
+      "Sırt yastığa dayalı, kulplar omuz hizasında.",
+      "Kulpları baş üstüne it, dirsekleri kilitleme.",
+      "Kontrollü omuz hizasına dön."
+    ],
+    "hatalar": [
+      "Kalçayı koltuktan kaldırmak beli zorlar.",
+      "Çok arkaya inmek omuz kapsülünü zorlar."
+    ],
+    "kolay_versiyon": "Hafif yük.",
+    "zor_versiyon": "Yavaş iniş."
+  },
+  {
+    "ad": "Dambıl arkadan açma",
+    "grup": "omuz",
+    "ekipman": "dambıl",
+    "seviye": "orta",
+    "nasil": [
+      "Gövde öne eğik, sırt düz, dambıllar altta.",
+      "Dirsekler hafif kırık, kolları yana ve geri aç.",
+      "Kürekleri sıkarak indir."
+    ],
+    "hatalar": [
+      "Sırtı yuvarlamak bel riskidir.",
+      "Ağırlığı savurmak boyunu sıkar."
+    ],
+    "kolay_versiyon": "Çok hafif dambıl, kısa açılma.",
+    "zor_versiyon": "Tepe noktada beklet."
+  },
+  {
+    "ad": "Pike şınav",
+    "grup": "omuz",
+    "ekipman": "yok",
+    "seviye": "orta",
+    "nasil": [
+      "Kalça yukarıda, vücut ters V şeklinde.",
+      "Başı ellerin arasına doğru indir.",
+      "Kollarla iterek başa dön."
+    ],
+    "hatalar": [
+      "Sırtı yuvarlamak beli rahatsız eder.",
+      "Dirsekleri yana açmak omzu sıkıştırır."
+    ],
+    "kolay_versiyon": "Daha kısa iniş.",
+    "zor_versiyon": "Ayaklar yükseltilmiş pike şınav."
+  },
+  {
+    "ad": "Dambıl biceps curl",
+    "grup": "kol",
+    "ekipman": "dambıl",
+    "seviye": "başlangıç",
+    "nasil": [
+      "Dirsekler gövdeye yakın, avuçlar önde.",
+      "Dambılı omuz hizasına kıvır, dirsek sabit.",
+      "Yavaşça indir, omuzla yardım etme."
+    ],
+    "hatalar": [
+      "Geriye yaslanmak beli kullanır.",
+      "Dirseği öne sürmek omzu çalıştırır."
+    ],
+    "kolay_versiyon": "Tek kol, hafif dambıl.",
+    "zor_versiyon": "Alt noktada bir saniye."
+  },
+  {
+    "ad": "Halter biceps curl",
+    "grup": "kol",
+    "ekipman": "halter",
+    "seviye": "orta",
+    "nasil": [
+      "Ayaklar omuz genişliğinde, bar uylukta.",
+      "Dirsekler sabitken barı göğse kıvır.",
+      "Barı sallamadan indir."
+    ],
+    "hatalar": [
+      "Belden savurmak bel ağrısı yapar.",
+      "Bileği bükmek tendonları zorlar."
+    ],
+    "kolay_versiyon": "Boş bar.",
+    "zor_versiyon": "Yavaş üç saniye iniş."
+  },
+  {
+    "ad": "Bant biceps curl",
+    "grup": "kol",
+    "ekipman": "bant",
+    "seviye": "başlangıç",
+    "nasil": [
+      "Banda iki ayakla bas, avuçlar önde.",
+      "Dirsekler yapışık, bandı omuza çek.",
+      "Kontrollü bırak."
+    ],
+    "hatalar": [
+      "Dirsekleri öne kaçırmak hareketi bozar.",
+      "Belden geriye gitmek risklidir."
+    ],
+    "kolay_versiyon": "Tek ayakla daha gevşek bant.",
+    "zor_versiyon": "Tepe noktada sık."
+  },
+  {
+    "ad": "Dambıl çekiç curl",
+    "grup": "kol",
+    "ekipman": "dambıl",
+    "seviye": "başlangıç",
+    "nasil": [
+      "Avuçlar birbirine bakar, dirsekler yanda.",
+      "Dambılı omuza doğru kıvır.",
+      "Yavaş indir, bileği döndürme."
+    ],
+    "hatalar": [
+      "Savurmak beli ve omzu kullanır.",
+      "Dirseği gövdeden ayırmak formu bozar."
+    ],
+    "kolay_versiyon": "Hafif dambıl.",
+    "zor_versiyon": "Tekrarlar arasında duruş."
+  },
+  {
+    "ad": "Triceps dip",
+    "grup": "kol",
+    "ekipman": "yok",
+    "seviye": "orta",
+    "nasil": [
+      "Eller sağlam bir kenarda, parmaklar öne.",
+      "Dirsekleri geriye bükerek kalçayı indir.",
+      "Kollarla iterek çık, omuzlar kulakta olmasın."
+    ],
+    "hatalar": [
+      "Çok derine inmek omzu zorlar.",
+      "Dirsekleri yana açmak eklemi ezer."
+    ],
+    "kolay_versiyon": "Dizler bükük, kısa iniş.",
+    "zor_versiyon": "Bacaklar düz dip."
+  },
+  {
+    "ad": "Dambıl tepeden triceps",
+    "grup": "kol",
+    "ekipman": "dambıl",
+    "seviye": "orta",
+    "nasil": [
+      "Ayakta veya oturarak dambılı başın üstünde tut.",
+      "Dirsekleri sabit, dambılı ensenin arkasına indir.",
+      "Ön kolu düzleştir, dirsek açılmasın."
+    ],
+    "hatalar": [
+      "Beli yaymak bel riskidir.",
+      "Dirseklerin açılması omzu yükler."
+    ],
+    "kolay_versiyon": "Tek el hafif dambıl.",
+    "zor_versiyon": "Alt noktada bir saniye."
+  },
+  {
+    "ad": "Bant triceps itiş",
+    "grup": "kol",
+    "ekipman": "bant",
+    "seviye": "başlangıç",
+    "nasil": [
+      "Bandı yukarı sabitle, dirsekler yanda.",
+      "Ön kolları aşağı it, dirsek oynamasın.",
+      "Yavaşça başlangıca dön."
+    ],
+    "hatalar": [
+      "Gövdeyi öne eğmek beli kullanır.",
+      "Dirsekleri açmak hareketi bozar."
+    ],
+    "kolay_versiyon": "Daha gevşek bant.",
+    "zor_versiyon": "Alt noktada iki saniye."
+  },
+  {
+    "ad": "Makine triceps itiş",
+    "grup": "kol",
+    "ekipman": "makine",
+    "seviye": "başlangıç",
+    "nasil": [
+      "Dirsekler pedin yanında sabit.",
+      "Kulpu aşağı it, kilitlemeden dur.",
+      "Kontrollü dirsek bükerek dön."
+    ],
+    "hatalar": [
+      "Omuzla bastırmak boynu sıkar.",
+      "Ağırlığı düşürmek dirseği zorlar."
+    ],
+    "kolay_versiyon": "Hafif yük.",
+    "zor_versiyon": "Yavaş üç saniye dönüş."
+  },
+  {
+    "ad": "Squat",
+    "grup": "bacak",
+    "ekipman": "yok",
+    "seviye": "başlangıç",
+    "nasil": [
+      "Ayaklar omuz genişliğinde, göğüs açık.",
+      "Kalçayı geriye iterek dizler ayak ucunu takip etsin.",
+      "Topuklardan kalk, dizleri içeri kaçırma."
+    ],
+    "hatalar": [
+      "Dizleri içe kapatmak diz bağını zorlar.",
+      "Topuk kalkması diz ve ayak bileğini zorlar."
+    ],
+    "kolay_versiyon": "Sandalyeye oturup kalk.",
+    "zor_versiyon": "Yavaş tempo tam derin squat."
+  },
+  {
+    "ad": "Halter squat",
+    "grup": "bacak",
+    "ekipman": "halter",
+    "seviye": "ileri",
+    "nasil": [
+      "Bar kürek kemiklerinin üstünde, göğüs dik.",
+      "Nefes al, kalçayı geri ve aşağı indir.",
+      "Dizler ayak yönünde, topuktan kalk."
+    ],
+    "hatalar": [
+      "Sırt yuvarlanırsa bel riski büyür.",
+      "Dizlerin içe kaçması diz için tehlikelidir."
+    ],
+    "kolay_versiyon": "Goblet yerine boş bar, yüksek kutu.",
+    "zor_versiyon": "Duraklı dip noktası."
+  },
+  {
+    "ad": "Dambıl kadeh squat",
+    "grup": "bacak",
+    "ekipman": "dambıl",
+    "seviye": "başlangıç",
+    "nasil": [
+      "Dambılı göğüste dik tut.",
+      "Dirsekler dizlerin arasında kalacak kadar otur.",
+      "Topuklardan iterek kalk."
+    ],
+    "hatalar": [
+      "Dizleri birbirine yapıştırmak diz ağrısı yapar.",
+      "Öne yıkılmak beli yuvarlar."
+    ],
+    "kolay_versiyon": "Hafif dambıl, yüksek oturuş.",
+    "zor_versiyon": "Dipte iki saniye."
+  },
+  {
+    "ad": "Lunge",
+    "grup": "bacak",
+    "ekipman": "yok",
+    "seviye": "başlangıç",
+    "nasil": [
+      "Bir adım öne, gövde dik.",
+      "Arka diz yere yaklaşsın, ön diz ayakla aynı yönde.",
+      "Ön topuktan iterek ayağa dön."
+    ],
+    "hatalar": [
+      "Ön diz içeri kaçarsa diz zorlanır.",
+      "Adım çok kısaysa diz öne biner."
+    ],
+    "kolay_versiyon": "Kısa adım, eller destekli.",
+    "zor_versiyon": "Her bacakta duraklı lunge."
+  },
+  {
+    "ad": "Yürüyen lunge",
+    "grup": "bacak",
+    "ekipman": "yok",
+    "seviye": "orta",
+    "nasil": [
+      "Dik dur, bir adım at.",
+      "Arka diz kontrollü insin, ön diz sabit kalsın.",
+      "Diğer bacakla adım atarak ilerle."
+    ],
+    "hatalar": [
+      "Dizlerin içe düşmesi diz riskidir.",
+      "Gövdeyi öne atmak dengeyi ve beli bozar."
+    ],
+    "kolay_versiyon": "Yerinde kısa lunge.",
+    "zor_versiyon": "Dambıl tutarak yürü."
+  },
+  {
+    "ad": "Makine bacak press",
+    "grup": "bacak",
+    "ekipman": "makine",
+    "seviye": "başlangıç",
+    "nasil": [
+      "Sırt ve kalça yastığa tam yaslı.",
+      "Ayaklar platformda, dizleri kontrollü bük.",
+      "Topuklarla it, dizleri kilitleme."
+    ],
+    "hatalar": [
+      "Kalçanın yastıktan kalkması beli ezer.",
+      "Dizleri çok derine ve içe almak diz için risklidir."
+    ],
+    "kolay_versiyon": "Kısa hareket açıklığı.",
+    "zor_versiyon": "Yavaş üç saniye iniş."
+  },
+  {
+    "ad": "Dambıl Rumence deadlift",
+    "grup": "bacak",
+    "ekipman": "dambıl",
+    "seviye": "orta",
+    "nasil": [
+      "Dambıllar uyluk önünde, dizler hafif kırık.",
+      "Kalçayı geri it, sırt düz kalsın, dambıllar bacağa yakın.",
+      "Kalçayı sıkarak dikel."
+    ],
+    "hatalar": [
+      "Sırtı yuvarlamak bel fıtığı riskini artırır.",
+      "Dambılı öne savurmak beli zorlar."
+    ],
+    "kolay_versiyon": "Dizler daha bükük, kısa eğilme.",
+    "zor_versiyon": "Tek bacak destekli Rumence deadlift."
+  },
+  {
+    "ad": "Duvar oturuşu",
+    "grup": "bacak",
+    "ekipman": "yok",
+    "seviye": "başlangıç",
+    "nasil": [
+      "Sırt duvarda, dizler yaklaşık doksan derece.",
+      "Dizler ayak uçlarının üstünde, içeri kaçmasın.",
+      "Nefes alarak süreyi tut, sonra dizleri açarak kalk."
+    ],
+    "hatalar": [
+      "Dizler ayak ucunu çok geçerse diz ağrır.",
+      "Nefesi tutmak baş döndürür."
+    ],
+    "kolay_versiyon": "Daha yüksek oturuş, kısa süre.",
+    "zor_versiyon": "Tek bacakla kısa duvar oturuşu."
+  },
+  {
+    "ad": "Glute bridge",
+    "grup": "kalça",
+    "ekipman": "yok",
+    "seviye": "başlangıç",
+    "nasil": [
+      "Sırtüstü, dizler bükük, ayaklar yerde.",
+      "Topuklardan it, kalçayı yukarı kaldır.",
+      "Kalçayı sık, beli aşırı oyma, yavaş in."
+    ],
+    "hatalar": [
+      "Beli yayarak yükseltmek bel ağrısı yapar.",
+      "Dizleri açıp kapatmak diz hizası bozar."
+    ],
+    "kolay_versiyon": "Kısa kaldırma.",
+    "zor_versiyon": "Tek bacak glute bridge."
+  },
+  {
+    "ad": "Tek bacak glute bridge",
+    "grup": "kalça",
+    "ekipman": "yok",
+    "seviye": "orta",
+    "nasil": [
+      "Bir ayak yerde, diğeri düz uzanır.",
+      "Yerdeki topuktan kalçayı kaldır.",
+      "Kalça yatay kalsın, yavaş in."
+    ],
+    "hatalar": [
+      "Belden itmek bel riskidir.",
+      "Kalçanın düşmesi diz hizasını bozar."
+    ],
+    "kolay_versiyon": "İki ayakla glute bridge.",
+    "zor_versiyon": "Dipte iki saniye tut."
+  },
+  {
+    "ad": "Halter hip thrust",
+    "grup": "kalça",
+    "ekipman": "halter",
+    "seviye": "ileri",
+    "nasil": [
+      "Kürek kemikleri sehpada, bar kalça kıvrımında.",
+      "Çene içeride, topuklardan kalçayı kaldır.",
+      "Tepe noktada kalçayı sık, beli oyma."
+    ],
+    "hatalar": [
+      "Beli aşırı germek bel için tehlikelidir.",
+      "Barı karna bindirmek nefes keser."
+    ],
+    "kolay_versiyon": "Bar olmadan hip thrust.",
+    "zor_versiyon": "Tepe noktada üç saniye."
+  },
+  {
+    "ad": "Bant yan adım",
+    "grup": "kalça",
+    "ekipman": "bant",
+    "seviye": "başlangıç",
+    "nasil": [
+      "Bant dizlerin hemen üstünde, hafif çömel.",
+      "Bir ayağı yana aç, diğerini kontrollü yaklaştır.",
+      "Dizler ayak yönünde kalsın."
+    ],
+    "hatalar": [
+      "Dizleri içe kapatmak diz riskidir.",
+      "Dikleşmek bandı boşaltır."
+    ],
+    "kolay_versiyon": "Daha gevşek bant.",
+    "zor_versiyon": "Daha alçak çömelme."
+  },
+  {
+    "ad": "Eşek tekmesi",
+    "grup": "kalça",
+    "ekipman": "yok",
+    "seviye": "başlangıç",
+    "nasil": [
+      "Eller ve dizler yerde, sırt düz.",
+      "Bir topuğu tavana doğru it, diz bükülü.",
+      "Kalçayı sık ve indir, beli oyma."
+    ],
+    "hatalar": [
+      "Beli çukurlaştırmak bel ağrısı yapar.",
+      "Ayağı savurmak kontrolü keser."
+    ],
+    "kolay_versiyon": "Kısa tekme.",
+    "zor_versiyon": "Tepe noktada iki saniye."
+  },
+  {
+    "ad": "Makine kalça açma",
+    "grup": "kalça",
+    "ekipman": "makine",
+    "seviye": "başlangıç",
+    "nasil": [
+      "Sırt yastıkta, pedler dizlerin dışında.",
+      "Dizleri kontrollü yana aç.",
+      "Yavaşça birleştir, pedi çarpma."
+    ],
+    "hatalar": [
+      "Beli koltuktan koparmak bel riskidir.",
+      "Diz pedi çok yukarıdaysa diz zorlanır."
+    ],
+    "kolay_versiyon": "Hafif yük, kısa açıklık.",
+    "zor_versiyon": "Tepe noktada beklet."
+  },
+  {
+    "ad": "İstiridye",
+    "grup": "kalça",
+    "ekipman": "yok",
+    "seviye": "başlangıç",
+    "nasil": [
+      "Yan yat, dizler bükük, topuklar birleşik.",
+      "Üst dizi aç, kalça geriye kaymasın.",
+      "Yavaş kapat."
+    ],
+    "hatalar": [
+      "Gövdeyi geriye devirmek beli döndürür.",
+      "Ayağı açmak hareketi bozar."
+    ],
+    "kolay_versiyon": "Küçük açıklık.",
+    "zor_versiyon": "Diz üstünde bant."
+  },
+  {
+    "ad": "Bacak geri savurma",
+    "grup": "kalça",
+    "ekipman": "yok",
+    "seviye": "başlangıç",
+    "nasil": [
+      "Dizler ve eller yerde.",
+      "Bir bacağı düz geriye uzat, kalça hizasında dur.",
+      "İndir, beli oynatma."
+    ],
+    "hatalar": [
+      "Bacağı çok yükseğe savurmak beli ezer.",
+      "Başı yukarı kaldırmak boyunu zorlar."
+    ],
+    "kolay_versiyon": "Diz bükülü kısa uzatma.",
+    "zor_versiyon": "Ayakta bantla geri çekiş."
+  },
+  {
+    "ad": "Plank",
+    "grup": "karın/core",
+    "ekipman": "yok",
+    "seviye": "başlangıç",
+    "nasil": [
+      "Dirsekler omuz altında, vücut düz.",
+      "Karın ve kalçayı sık, nefes akmaya devam etsin.",
+      "Süre bitince dizleri yere koyarak çık."
+    ],
+    "hatalar": [
+      "Kalçayı düşürmek veya kaldırmak beli zorlar.",
+      "Nefesi tutmak formu bozar."
+    ],
+    "kolay_versiyon": "Dizler yerde plank.",
+    "zor_versiyon": "Tek kol plank, kısa süre."
+  },
+  {
+    "ad": "Yan plank",
+    "grup": "karın/core",
+    "ekipman": "yok",
+    "seviye": "orta",
+    "nasil": [
+      "Dirsek omuz altında, ayaklar üst üste.",
+      "Kalçayı yerden kaldır, vücut düz çizgi.",
+      "Kalçayı düşürmeden süreyi tut."
+    ],
+    "hatalar": [
+      "Kalçanın öne kaçması beli döndürür.",
+      "Boynu omuza yapıştırmak ağrıtır."
+    ],
+    "kolay_versiyon": "Dizler bükük yan plank.",
+    "zor_versiyon": "Üst bacak kaldırarak yan plank."
+  },
+  {
+    "ad": "Mekik",
+    "grup": "karın/core",
+    "ekipman": "yok",
+    "seviye": "başlangıç",
+    "nasil": [
+      "Sırtüstü, dizler bükük, eller göğüste.",
+      "Kürek kemiklerini yerden az kaldır, bel yerde kalsın.",
+      "Yavaş in."
+    ],
+    "hatalar": [
+      "Boynu çekmek boyun ağrısı yapar.",
+      "Beli yerden koparmak bel riskidir."
+    ],
+    "kolay_versiyon": "Çok küçük kaldırma.",
+    "zor_versiyon": "Yavaş üç saniye iniş."
+  },
+  {
+    "ad": "Ölü böcek",
+    "grup": "karın/core",
+    "ekipman": "yok",
+    "seviye": "başlangıç",
+    "nasil": [
+      "Sırtüstü, kollar ve dizler yukarıda.",
+      "Karşı kol ve bacağı uzat, bel yere yapışık.",
+      "Başlangıca dön, taraf değiştir."
+    ],
+    "hatalar": [
+      "Belin yerden kalkması bel riskidir.",
+      "Nefesi tutmak dengeyi bozar."
+    ],
+    "kolay_versiyon": "Sadece bacak uzat.",
+    "zor_versiyon": "Uzun duruşlu ölü böcek."
+  },
+  {
+    "ad": "Kuş köpek",
+    "grup": "karın/core",
+    "ekipman": "yok",
+    "seviye": "başlangıç",
+    "nasil": [
+      "Eller ve dizler yerde, sırt düz.",
+      "Karşı kol ve bacağı uzat, kalça yatay.",
+      "Yavaş indir, bel oynamasın."
+    ],
+    "hatalar": [
+      "Beli çukurlaştırmak bel ağrısı yapar.",
+      "Başı yukarı kaldırmak boyunu eğer."
+    ],
+    "kolay_versiyon": "Sadece kolu uzat.",
+    "zor_versiyon": "Uzatılan pozda iki saniye."
+  },
+  {
+    "ad": "Dağ tırmanışı",
+    "grup": "karın/core",
+    "ekipman": "yok",
+    "seviye": "orta",
+    "nasil": [
+      "Şınav pozisyonu, vücut düz.",
+      "Bir dizi göğse çek, diğer bacak düz.",
+      "Hızlı ama kontrollü değiştir."
+    ],
+    "hatalar": [
+      "Kalçayı yükseltmek beli boşaltır.",
+      "Dizleri yere çarpmak eklemi zorlar."
+    ],
+    "kolay_versiyon": "Yavaş, dizler yerde varyasyon.",
+    "zor_versiyon": "Her çekişte bir saniye bekle."
+  },
+  {
+    "ad": "Topuk dokunuş",
+    "grup": "karın/core",
+    "ekipman": "yok",
+    "seviye": "başlangıç",
+    "nasil": [
+      "Sırtüstü, dizler bükük, kollar yanda.",
+      "Kürek kemiklerini az kaldırıp elini topuğa uzat.",
+      "Taraf değiştir, boynu çekme."
+    ],
+    "hatalar": [
+      "Hızlı savrulmak boyun ve beli zorlar.",
+      "Ayakları kaldırmak formu bozar."
+    ],
+    "kolay_versiyon": "Küçük uzanış.",
+    "zor_versiyon": "Yavaş tempo."
+  },
+  {
+    "ad": "Tekne duruşu",
+    "grup": "karın/core",
+    "ekipman": "yok",
+    "seviye": "orta",
+    "nasil": [
+      "Sırtüstü, kollar ve bacaklar birlikte kalksın.",
+      "Bel yere yakın kalsın, nefes devam etsin.",
+      "Kontrollü in."
+    ],
+    "hatalar": [
+      "Beli yerden iyice koparmak bel riskidir.",
+      "Nefesi tutmak baş döndürür."
+    ],
+    "kolay_versiyon": "Dizler bükük kısa tekne.",
+    "zor_versiyon": "Kollar kulak yanında tekne."
+  },
+  {
+    "ad": "Koşu",
+    "grup": "kardiyo",
+    "ekipman": "yok",
+    "seviye": "orta",
+    "nasil": [
+      "Dik dur, bakış ileri, adım ayağın altına düşsün.",
+      "Kolunu rahat savur, topuk yerine ayak ortasıyla bas.",
+      "Nefesi ritme bağla, ağrı olursa yürüyüşe geç."
+    ],
+    "hatalar": [
+      "Çok uzun adım dizi öne aşırı yükler.",
+      "Öne yıkılmak beli ve boynu yorar."
+    ],
+    "kolay_versiyon": "Koşu yürüyüş karışımı.",
+    "zor_versiyon": "Kısa tempo koşusu."
+  },
+  {
+    "ad": "Tempolu yürüyüş",
+    "grup": "kardiyo",
+    "ekipman": "yok",
+    "seviye": "başlangıç",
+    "nasil": [
+      "Dik gövde, kollar aktif.",
+      "Adım rahat, topuk-parmak sırasında bas.",
+      "Konuşabilecek nefesle tempo tut."
+    ],
+    "hatalar": [
+      "Çok hızlı ve uzun adım dizi zorlar.",
+      "Öne kapanmak beli yuvarlar."
+    ],
+    "kolay_versiyon": "Düz yolda yavaş yürüyüş.",
+    "zor_versiyon": "Hafif yokuş."
+  },
+  {
+    "ad": "İp atlama",
+    "grup": "kardiyo",
+    "ekipman": "yok",
+    "seviye": "orta",
+    "nasil": [
+      "İp topukların hemen önünden geçsin.",
+      "Bileklerle çevir, dizler yumuşak.",
+      "Küçük sıçra, topukları yere çarpma."
+    ],
+    "hatalar": [
+      "Sert iniş diz ve ayak bileğini zorlar.",
+      "İpi kolla çevirmek omzu yorar."
+    ],
+    "kolay_versiyon": "İpsiz hayali atlama, yavaş.",
+    "zor_versiyon": "Çift sıçramasız seri."
+  },
+  {
+    "ad": "Burpee",
+    "grup": "kardiyo",
+    "ekipman": "yok",
+    "seviye": "ileri",
+    "nasil": [
+      "Çömel, eller yere.",
+      "Ayakları geri at, şınav pozisyonu, sonra göğse çek.",
+      "Yukarı kalk, istersen küçük sıçra, dizleri kilitleme."
+    ],
+    "hatalar": [
+      "Sert yere çökmek diz için risklidir.",
+      "Şınavdayken kalçayı düşürmek beli zorlar."
+    ],
+    "kolay_versiyon": "Sıçramasız, adım atarak burpee.",
+    "zor_versiyon": "Şınavlı burpee."
+  },
+  {
+    "ad": "Kolları açarak sıçrama",
+    "grup": "kardiyo",
+    "ekipman": "yok",
+    "seviye": "başlangıç",
+    "nasil": [
+      "Ayaklar bitişik, kollar yanda.",
+      "Ayakları yana açarken kollar baş üstünde birleşsin.",
+      "Yumuşak in, dizler kilitlenmesin."
+    ],
+    "hatalar": [
+      "Topukla sert inmek dizi zorlar.",
+      "Kolları geriye savurmak omzu sıkar."
+    ],
+    "kolay_versiyon": "Sıçramadan adım aç.",
+    "zor_versiyon": "Daha hızlı seri."
+  },
+  {
+    "ad": "Yüksek diz",
+    "grup": "kardiyo",
+    "ekipman": "yok",
+    "seviye": "orta",
+    "nasil": [
+      "Yerinde, bir dizi kalça hizasına çek.",
+      "Karşı kolu hafif savur, gövde dik.",
+      "Yumuşak bas, nefesi kesme."
+    ],
+    "hatalar": [
+      "Dizi çok sert yere indirmek diz ağrısı yapar.",
+      "Öne eğilmek beli yorar."
+    ],
+    "kolay_versiyon": "Yavaş yüksek diz yürüyüşü.",
+    "zor_versiyon": "Yirmi saniye hızlı seri."
+  },
+  {
+    "ad": "Yerinde bisiklet",
+    "grup": "kardiyo",
+    "ekipman": "yok",
+    "seviye": "başlangıç",
+    "nasil": [
+      "Sırt yaslı sandalyede veya ayakta dizleri çevir.",
+      "Sırtüstüysen bel yerde, dizleri göğse çevir.",
+      "Tempo nefese göre artsın."
+    ],
+    "hatalar": [
+      "Beli yerden kaldırmak bel riskidir.",
+      "Boynu öne çekmek ağrıtır."
+    ],
+    "kolay_versiyon": "Yavaş ve küçük daire.",
+    "zor_versiyon": "Daha hızlı tempo."
+  },
+  {
+    "ad": "Merdiven çıkma",
+    "grup": "kardiyo",
+    "ekipman": "yok",
+    "seviye": "başlangıç",
+    "nasil": [
+      "Tüm ayak basamağa bassın.",
+      "Diz ayakla aynı yöne baksın, tırabzana tutunabilirsin.",
+      "İnerken yavaşla, sıçrama."
+    ],
+    "hatalar": [
+      "Basamağın ucuna basmak dizi kaydırır.",
+      "Öne yıkılarak çıkmak beli yorar."
+    ],
+    "kolay_versiyon": "Tek kat, yavaş.",
+    "zor_versiyon": "İki basamak, kontrollü."
+  },
+  {
+    "ad": "Kalça fleksör esnetme",
+    "grup": "mobilite/esneme",
+    "ekipman": "yok",
+    "seviye": "başlangıç",
+    "nasil": [
+      "Bir diz yerde, diğer ayak önde.",
+      "Kalçayı hafif öne kaydır, gövde dik.",
+      "Nefes vererek yirmi saniye tut."
+    ],
+    "hatalar": [
+      "Beli aşırı oymak bel ağrısı yapar.",
+      "Ön dizi içeri kaçırmak diz için risklidir."
+    ],
+    "kolay_versiyon": "Daha kısa kaydırma.",
+    "zor_versiyon": "Kolu yukarı uzatarak tut."
+  },
+  {
+    "ad": "Arka bacak esnetme",
+    "grup": "mobilite/esneme",
+    "ekipman": "yok",
+    "seviye": "başlangıç",
+    "nasil": [
+      "Bir topuk önde, diz hafif kırık.",
+      "Sırt düz, kalçadan öne eğil.",
+      "Bacağın arkasında gerilme hissedince dur."
+    ],
+    "hatalar": [
+      "Sırtı yuvarlamak bel riskidir.",
+      "Dizi zorla kilitlemek diz arkası ağrıtır."
+    ],
+    "kolay_versiyon": "Diz daha bükük.",
+    "zor_versiyon": "Ayak bir yükseltide."
+  },
+  {
+    "ad": "Kedi deve",
+    "grup": "mobilite/esneme",
+    "ekipman": "yok",
+    "seviye": "başlangıç",
+    "nasil": [
+      "Eller omuz, dizler kalça altında.",
+      "Nefes verirken sırtı tavana yuvarla.",
+      "Nefes alırken göğsü aç, beli zorlama."
+    ],
+    "hatalar": [
+      "Deve pozunda beli çökertmek ağrıtır.",
+      "Hareketi boyundan yapmak boyun ağrısı yapar."
+    ],
+    "kolay_versiyon": "Küçük aralık.",
+    "zor_versiyon": "Her pozda üç nefes."
+  },
+  {
+    "ad": "Göğüs kafesi çevirme",
+    "grup": "mobilite/esneme",
+    "ekipman": "yok",
+    "seviye": "başlangıç",
+    "nasil": [
+      "Yan yat, dizler bükük, kollar önde.",
+      "Üst kolu göğüs açık bir yay çizerek arkaya indir.",
+      "Bakış eli takip etsin, dizler yerde kalsın."
+    ],
+    "hatalar": [
+      "Dizleri yerden kaldırmak beli döndürür.",
+      "Zorlayarak çekmek omzu acıtır."
+    ],
+    "kolay_versiyon": "Küçük yay.",
+    "zor_versiyon": "Son noktada nefes tutmadan bekle."
+  },
+  {
+    "ad": "Kapı göğüs esnetme",
+    "grup": "mobilite/esneme",
+    "ekipman": "yok",
+    "seviye": "başlangıç",
+    "nasil": [
+      "Ön kol kapı pervazında, dirsek omuz hizasında.",
+      "Bir adım öne, göğüste gerilme ara.",
+      "Yirmi saniye tut, omzu zorlama."
+    ],
+    "hatalar": [
+      "Ağrıya kadar itmek omuz kapsülünü zorlar.",
+      "Beli öne devirmek hareketi bozar."
+    ],
+    "kolay_versiyon": "Dirsek daha aşağı.",
+    "zor_versiyon": "Her iki kolla ayrı tut."
+  },
+  {
+    "ad": "Bilek dairesi",
+    "grup": "mobilite/esneme",
+    "ekipman": "yok",
+    "seviye": "başlangıç",
+    "nasil": [
+      "Kol önde, yumruk gevşek.",
+      "Bileği yavaş daire çiz.",
+      "Yön değiştir, ağrı varsa küçült."
+    ],
+    "hatalar": [
+      "Hızlı zorlamak bilek tendonunu zorlar.",
+      "Dirseği kilitleyip sallamak omzu yorar."
+    ],
+    "kolay_versiyon": "Çok küçük daire.",
+    "zor_versiyon": "Parmaklar açık, yavaş daire."
+  },
+  {
+    "ad": "Ayak bileği mobilitesi",
+    "grup": "mobilite/esneme",
+    "ekipman": "yok",
+    "seviye": "başlangıç",
+    "nasil": [
+      "Bir ayak duvara yakın, diz duvara değsin.",
+      "Topuk yerde kalsın, dizi yavaşça duvara götür.",
+      "Topuk kalkıyorsa ayağı yaklaştır."
+    ],
+    "hatalar": [
+      "Dizi içe düşürmek diz için risklidir.",
+      "Topuğu zorla yerde tutup ağrıya girmek yanlıştır."
+    ],
+    "kolay_versiyon": "Daha uzak mesafe.",
+    "zor_versiyon": "Her iki ayakta on tekrar."
+  },
+  {
+    "ad": "Çocuk pozu",
+    "grup": "mobilite/esneme",
+    "ekipman": "yok",
+    "seviye": "başlangıç",
+    "nasil": [
+      "Dizler açık, kalça topuklara yakın.",
+      "Kollar önde, alın yere doğru.",
+      "Sırtın açılmasına nefes ver."
+    ],
+    "hatalar": [
+      "Diz ağrırsa dizlerin arasına yastık koy.",
+      "Kalçayı zorla topuğa yapıştırmak diz için risklidir."
+    ],
+    "kolay_versiyon": "Yastıkla destekli çocuk pozu.",
+    "zor_versiyon": "Kollar daha uzun, uzun nefes."
+  },
+  {
+    "ad": "Aşağı bakan köpek",
+    "grup": "yoga",
+    "ekipman": "yok",
+    "seviye": "başlangıç",
+    "nasil": [
+      "Eller omuz, ayaklar kalça genişliğinde.",
+      "Kalçayı yukarı ve geri it, dizler hafif bükülebilir.",
+      "Başı kolların arasında serbest, nefes uzun."
+    ],
+    "hatalar": [
+      "Dizleri zorla kilitlemek diz arkası ağrıtır.",
+      "Topuk inmiyorsa beli yuvarlama."
+    ],
+    "kolay_versiyon": "Dizler bükük köpek.",
+    "zor_versiyon": "Topuklar yere daha yakın."
+  },
+  {
+    "ad": "Yukarı bakan köpek",
+    "grup": "yoga",
+    "ekipman": "yok",
+    "seviye": "orta",
+    "nasil": [
+      "Yüzüstü, avuçlar göğüs yanında.",
+      "Kollarla göğsü aç, kalça yerde kalsın.",
+      "Omuzlar kulaktan uzak, bakış ileri."
+    ],
+    "hatalar": [
+      "Kolları kilitleyip beli çökertmek bel riskidir.",
+      "Omuzları kulağa çekmek boyunu sıkar."
+    ],
+    "kolay_versiyon": "Dirsekler bükük, alçak kobra.",
+    "zor_versiyon": "Bir nefes daha uzun tutuş."
+  },
+  {
+    "ad": "Savaşçı bir",
+    "grup": "yoga",
+    "ekipman": "yok",
+    "seviye": "başlangıç",
+    "nasil": [
+      "Bir ayak önde bükülü, arka ayak düz ve dışa hafif açık.",
+      "Kollar yukarı, kalça öne bakar.",
+      "Ön diz ayak bileğinin üstünde kalsın."
+    ],
+    "hatalar": [
+      "Ön diz içeri kaçarsa diz zorlanır.",
+      "Beli aşırı germek ağrı yapar."
+    ],
+    "kolay_versiyon": "Daha kısa adım.",
+    "zor_versiyon": "Kollar kulak yanında uzun tutuş."
+  },
+  {
+    "ad": "Savaşçı iki",
+    "grup": "yoga",
+    "ekipman": "yok",
+    "seviye": "başlangıç",
+    "nasil": [
+      "Ayaklar geniş, ön diz bükülü, kollar yana açık.",
+      "Bakış ön ele, gövde dik.",
+      "Ön diz ayak yönünde, içeri düşmesin."
+    ],
+    "hatalar": [
+      "Diz ayak ucunu geçerse diz yüklenir.",
+      "Gövdeyi öne yıkmak beli yorar."
+    ],
+    "kolay_versiyon": "Daha yüksek duruş.",
+    "zor_versiyon": "Ön uyluk yere daha paralel."
+  },
+  {
+    "ad": "Ağaç pozu",
+    "grup": "yoga",
+    "ekipman": "yok",
+    "seviye": "başlangıç",
+    "nasil": [
+      "Bir ayakta dur, diğer tabanı baldıra veya bileğe koy.",
+      "Dizi yana aç, kalçalar eşit.",
+      "Eller göğüste veya yukarıda, bakış sabit."
+    ],
+    "hatalar": [
+      "Ayağı diz eklemine bastırmak diz için risklidir.",
+      "Kalçayı dışarı atmak dengeyi ve beli bozar."
+    ],
+    "kolay_versiyon": "Ayak parmak ucu yerde destekli.",
+    "zor_versiyon": "Gözler kapalı kısa tutuş."
+  },
+  {
+    "ad": "Köprü pozu",
+    "grup": "yoga",
+    "ekipman": "yok",
+    "seviye": "başlangıç",
+    "nasil": [
+      "Sırtüstü, dizler bükük, ayaklar yerde.",
+      "Kalçayı kaldır, dizler kalça genişliğinde.",
+      "Çene içeride, yavaş in."
+    ],
+    "hatalar": [
+      "Beli aşırı oymak bel ağrısı yapar.",
+      "Dizleri açmak diz hizasını bozar."
+    ],
+    "kolay_versiyon": "Alçak köprü.",
+    "zor_versiyon": "Kollar yerde kenetlenmiş köprü."
+  },
+  {
+    "ad": "Oturarak öne eğilme",
+    "grup": "yoga",
+    "ekipman": "yok",
+    "seviye": "başlangıç",
+    "nasil": [
+      "Bacaklar önde, dizler hafif bükülebilir.",
+      "Sırt düz, kalçadan öne uzan.",
+      "Gerilmede dur, zıplama."
+    ],
+    "hatalar": [
+      "Sırtı yuvarlamak bel riskidir.",
+      "Dizleri acıyana kadar kilitlemek yanlıştır."
+    ],
+    "kolay_versiyon": "Dizlerin altında yastık.",
+    "zor_versiyon": "Her nefeste bir parmak daha uzağa, zorlamadan."
+  },
+  {
+    "ad": "Ceset pozu",
+    "grup": "yoga",
+    "ekipman": "yok",
+    "seviye": "başlangıç",
+    "nasil": [
+      "Sırtüstü, ayaklar açık, avuçlar yukarı.",
+      "Omuzları yerde yumuşat, çene hafif içeride.",
+      "Birkaç dakika sadece nefes say."
+    ],
+    "hatalar": [
+      "Beli rahatsızsa dizlerin altına yastık koy.",
+      "Nefesi tutmak gevşemeyi bozar."
+    ],
+    "kolay_versiyon": "Dizler bükük ceset pozu.",
+    "zor_versiyon": "Daha uzun süre, hareketsiz."
+  }
 ]

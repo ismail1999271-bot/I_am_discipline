@@ -1,16 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:i_am_disiplin/data/catalog.dart';
+import 'package:i_am_disiplin/data/foods.dart';
 import 'package:i_am_disiplin/models/app_models.dart';
 import 'package:i_am_disiplin/services/store.dart';
 import 'package:i_am_disiplin/services/xp_engine.dart';
 import 'package:i_am_disiplin/widgets/common.dart';
 import 'package:i_am_disiplin/widgets/premium_gate.dart';
 
-class CalorieScreen extends StatelessWidget {
+class CalorieScreen extends StatefulWidget {
   const CalorieScreen({super.key});
 
   @override
+  State<CalorieScreen> createState() => _CalorieScreenState();
+}
+
+class _CalorieScreenState extends State<CalorieScreen> {
+  String _query = '';
+
+  @override
   Widget build(BuildContext context) {
+    final q = _query.trim().toLowerCase();
+    final shown = q.isEmpty ? foods : foods.where((f) => f.name.toLowerCase().contains(q)).toList();
     return PremiumGate(
       title: 'KALORİ',
       child: AnimatedBuilder(
@@ -50,9 +59,15 @@ class CalorieScreen extends StatelessWidget {
                     ),
                   ),
                 const SizedBox(height: 8),
-                const SectionTitle('EKLE'),
+                const SectionTitle('300 YEMEK'),
                 const SizedBox(height: 8),
-                for (final food in foods)
+                TextField(
+                  decoration: const InputDecoration(labelText: 'ARA'),
+                  onChanged: (v) => setState(() => _query = v),
+                ),
+                const SizedBox(height: 8),
+                if (shown.isEmpty) const Text('Sonuç yok.', style: TextStyle(color: Colors.white54)),
+                for (final food in shown)
                   ListTile(
                     contentPadding: EdgeInsets.zero,
                     title: Text(food.name),

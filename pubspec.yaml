@@ -24,3 +24,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/sozler.json
+    - assets/exercises.json
+    - assets/programs.json
+    - lib/exercises.json
+    - lib/programs.json

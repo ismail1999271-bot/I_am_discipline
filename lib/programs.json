@@ -1,7 +1,753 @@
 [
-  {"ad": "Evde 20 dk Sabah", "aciklama": "Kısa, etkili, ekipmansız sabah rutini.", "seviye": "başlangıç", "haftada_gun": 5, "gunler": [{"ad": "Gün A", "hareketler": [{"ad": "Jumping jack", "set": 3, "tekrar": 30, "birim": "sn", "agirlikli": false}, {"ad": "Squat", "set": 3, "tekrar": 12, "birim": "tekrar", "agirlikli": false}, {"ad": "Şınav", "set": 3, "tekrar": 8, "birim": "tekrar", "agirlikli": false}, {"ad": "Glute bridge", "set": 3, "tekrar": 15, "birim": "tekrar", "agirlikli": false}, {"ad": "Plank", "set": 3, "tekrar": 30, "birim": "sn", "agirlikli": false}]}]},
-  {"ad": "Ofis Çalışanı Duruş Düzeltme", "aciklama": "Masa başı için boyun, omuz ve sırt mobilitesi.", "seviye": "başlangıç", "haftada_gun": 5, "gunler": [{"ad": "Gün A", "hareketler": [{"ad": "Cat-cow", "set": 2, "tekrar": 10, "birim": "tekrar", "agirlikli": false}, {"ad": "Child's pose", "set": 1, "tekrar": 60, "birim": "sn", "agirlikli": false}]}]},
-  {"ad": "Salonda 3 Gün Tüm Vücut", "aciklama": "Orta seviye tam vücut programı.", "seviye": "orta", "haftada_gun": 3, "gunler": [{"ad": "Gün A", "hareketler": [{"ad": "Squat", "set": 4, "tekrar": 8, "birim": "tekrar", "agirlikli": true}, {"ad": "Şınav", "set": 3, "tekrar": 10, "birim": "tekrar", "agirlikli": false}, {"ad": "Barfiks", "set": 3, "tekrar": 6, "birim": "tekrar", "agirlikli": false}]}]},
-  {"ad": "Kalça-Bacak Odaklı", "aciklama": "Alt vücut geliştirme programı.", "seviye": "orta", "haftada_gun": 3, "gunler": [{"ad": "Gün A", "hareketler": [{"ad": "Lunge", "set": 3, "tekrar": 10, "birim": "tekrar", "agirlikli": false}, {"ad": "Glute bridge", "set": 4, "tekrar": 12, "birim": "tekrar", "agirlikli": false}, {"ad": "Squat", "set": 4, "tekrar": 10, "birim": "tekrar", "agirlikli": false}]}]},
-  {"ad": "Esneklik ve Mobilite", "aciklama": "Günlük esneklik ve mobilite çalışması.", "seviye": "başlangıç", "haftada_gun": 7, "gunler": [{"ad": "Gün A", "hareketler": [{"ad": "Downward dog", "set": 2, "tekrar": 45, "birim": "sn", "agirlikli": false}, {"ad": "Child's pose", "set": 1, "tekrar": 60, "birim": "sn", "agirlikli": false}, {"ad": "Cat-cow", "set": 2, "tekrar": 8, "birim": "tekrar", "agirlikli": false}]}]}
+  {
+    "ad": "Evde 20 dk sabah",
+    "aciklama": "Uyanır uyanmaz yirmi dakika. Malzeme yok. Tempoyu kaçırma.",
+    "seviye": "başlangıç",
+    "haftada_gun": 5,
+    "gunler": [
+      {
+        "ad": "Sabah",
+        "hareketler": [
+          {
+            "ad": "Kolları açarak sıçrama",
+            "set": 2,
+            "tekrar": 30,
+            "birim": "sn",
+            "agirlikli": false
+          },
+          {
+            "ad": "Şınav",
+            "set": 3,
+            "tekrar": 8,
+            "birim": "tekrar",
+            "agirlikli": false
+          },
+          {
+            "ad": "Squat",
+            "set": 3,
+            "tekrar": 12,
+            "birim": "tekrar",
+            "agirlikli": false
+          },
+          {
+            "ad": "Glute bridge",
+            "set": 3,
+            "tekrar": 12,
+            "birim": "tekrar",
+            "agirlikli": false
+          },
+          {
+            "ad": "Plank",
+            "set": 3,
+            "tekrar": 20,
+            "birim": "sn",
+            "agirlikli": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "ad": "Ofis duruş düzeltme",
+    "aciklama": "Masada kapanan sırta on beş dakika. Ağrı varsa aralığı küçült.",
+    "seviye": "başlangıç",
+    "haftada_gun": 4,
+    "gunler": [
+      {
+        "ad": "Öğle",
+        "hareketler": [
+          {
+            "ad": "Kedi deve",
+            "set": 2,
+            "tekrar": 8,
+            "birim": "tekrar",
+            "agirlikli": false
+          },
+          {
+            "ad": "Kapı göğüs esnetme",
+            "set": 2,
+            "tekrar": 20,
+            "birim": "sn",
+            "agirlikli": false
+          },
+          {
+            "ad": "Bant yüz çekişi",
+            "set": 3,
+            "tekrar": 12,
+            "birim": "tekrar",
+            "agirlikli": false
+          },
+          {
+            "ad": "Kuş köpek",
+            "set": 3,
+            "tekrar": 8,
+            "birim": "tekrar",
+            "agirlikli": false
+          },
+          {
+            "ad": "Çocuk pozu",
+            "set": 1,
+            "tekrar": 40,
+            "birim": "sn",
+            "agirlikli": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "ad": "Salonda 3 gün tüm vücut",
+    "aciklama": "Orta seviye. Günler arasında en az bir gün ara. Ağırlık kontrollü.",
+    "seviye": "orta",
+    "haftada_gun": 3,
+    "gunler": [
+      {
+        "ad": "Gün A",
+        "hareketler": [
+          {
+            "ad": "Halter squat",
+            "set": 3,
+            "tekrar": 8,
+            "birim": "tekrar",
+            "agirlikli": true
+          },
+          {
+            "ad": "Halter bench press",
+            "set": 3,
+            "tekrar": 8,
+            "birim": "tekrar",
+            "agirlikli": true
+          },
+          {
+            "ad": "Makine lat çekiş",
+            "set": 3,
+            "tekrar": 10,
+            "birim": "tekrar",
+            "agirlikli": true
+          },
+          {
+            "ad": "Dambıl omuz press",
+            "set": 3,
+            "tekrar": 10,
+            "birim": "tekrar",
+            "agirlikli": true
+          },
+          {
+            "ad": "Plank",
+            "set": 3,
+            "tekrar": 30,
+            "birim": "sn",
+            "agirlikli": false
+          }
+        ]
+      },
+      {
+        "ad": "Gün B",
+        "hareketler": [
+          {
+            "ad": "Dambıl Rumence deadlift",
+            "set": 3,
+            "tekrar": 8,
+            "birim": "tekrar",
+            "agirlikli": true
+          },
+          {
+            "ad": "Dambıl bench press",
+            "set": 3,
+            "tekrar": 10,
+            "birim": "tekrar",
+            "agirlikli": true
+          },
+          {
+            "ad": "Dambıl tek kol sıra",
+            "set": 3,
+            "tekrar": 10,
+            "birim": "tekrar",
+            "agirlikli": true
+          },
+          {
+            "ad": "Makine bacak press",
+            "set": 3,
+            "tekrar": 12,
+            "birim": "tekrar",
+            "agirlikli": true
+          },
+          {
+            "ad": "Mekik",
+            "set": 3,
+            "tekrar": 12,
+            "birim": "tekrar",
+            "agirlikli": false
+          }
+        ]
+      },
+      {
+        "ad": "Gün C",
+        "hareketler": [
+          {
+            "ad": "Dambıl kadeh squat",
+            "set": 3,
+            "tekrar": 12,
+            "birim": "tekrar",
+            "agirlikli": true
+          },
+          {
+            "ad": "Eğik dambıl press",
+            "set": 3,
+            "tekrar": 10,
+            "birim": "tekrar",
+            "agirlikli": true
+          },
+          {
+            "ad": "Bant sıra",
+            "set": 3,
+            "tekrar": 12,
+            "birim": "tekrar",
+            "agirlikli": false
+          },
+          {
+            "ad": "Makine omuz press",
+            "set": 3,
+            "tekrar": 10,
+            "birim": "tekrar",
+            "agirlikli": true
+          },
+          {
+            "ad": "Yan plank",
+            "set": 3,
+            "tekrar": 20,
+            "birim": "sn",
+            "agirlikli": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "ad": "5 gün itme çekme bacak",
+    "aciklama": "İtiş, çekiş, bacak, itiş, çekiş. Haftada beş gün. Bel yuvarlanırsa yükü indir.",
+    "seviye": "ileri",
+    "haftada_gun": 5,
+    "gunler": [
+      {
+        "ad": "İtiş 1",
+        "hareketler": [
+          {
+            "ad": "Halter bench press",
+            "set": 4,
+            "tekrar": 6,
+            "birim": "tekrar",
+            "agirlikli": true
+          },
+          {
+            "ad": "Dambıl omuz press",
+            "set": 3,
+            "tekrar": 8,
+            "birim": "tekrar",
+            "agirlikli": true
+          },
+          {
+            "ad": "Dambıl fly",
+            "set": 3,
+            "tekrar": 12,
+            "birim": "tekrar",
+            "agirlikli": true
+          },
+          {
+            "ad": "Makine triceps itiş",
+            "set": 3,
+            "tekrar": 12,
+            "birim": "tekrar",
+            "agirlikli": true
+          }
+        ]
+      },
+      {
+        "ad": "Çekiş 1",
+        "hareketler": [
+          {
+            "ad": "Barfiks",
+            "set": 4,
+            "tekrar": 6,
+            "birim": "tekrar",
+            "agirlikli": false
+          },
+          {
+            "ad": "Halter eğik sıra",
+            "set": 4,
+            "tekrar": 8,
+            "birim": "tekrar",
+            "agirlikli": true
+          },
+          {
+            "ad": "Makine lat çekiş",
+            "set": 3,
+            "tekrar": 10,
+            "birim": "tekrar",
+            "agirlikli": true
+          },
+          {
+            "ad": "Halter biceps curl",
+            "set": 3,
+            "tekrar": 10,
+            "birim": "tekrar",
+            "agirlikli": true
+          }
+        ]
+      },
+      {
+        "ad": "Bacak",
+        "hareketler": [
+          {
+            "ad": "Halter squat",
+            "set": 4,
+            "tekrar": 6,
+            "birim": "tekrar",
+            "agirlikli": true
+          },
+          {
+            "ad": "Dambıl Rumence deadlift",
+            "set": 3,
+            "tekrar": 8,
+            "birim": "tekrar",
+            "agirlikli": true
+          },
+          {
+            "ad": "Makine bacak press",
+            "set": 3,
+            "tekrar": 10,
+            "birim": "tekrar",
+            "agirlikli": true
+          },
+          {
+            "ad": "Glute bridge",
+            "set": 3,
+            "tekrar": 12,
+            "birim": "tekrar",
+            "agirlikli": false
+          }
+        ]
+      },
+      {
+        "ad": "İtiş 2",
+        "hareketler": [
+          {
+            "ad": "Eğik dambıl press",
+            "set": 4,
+            "tekrar": 8,
+            "birim": "tekrar",
+            "agirlikli": true
+          },
+          {
+            "ad": "Pike şınav",
+            "set": 3,
+            "tekrar": 8,
+            "birim": "tekrar",
+            "agirlikli": false
+          },
+          {
+            "ad": "Dambıl yan kaldırma",
+            "set": 3,
+            "tekrar": 12,
+            "birim": "tekrar",
+            "agirlikli": true
+          },
+          {
+            "ad": "Dambıl tepeden triceps",
+            "set": 3,
+            "tekrar": 10,
+            "birim": "tekrar",
+            "agirlikli": true
+          }
+        ]
+      },
+      {
+        "ad": "Çekiş 2",
+        "hareketler": [
+          {
+            "ad": "Yatay barfiks",
+            "set": 4,
+            "tekrar": 8,
+            "birim": "tekrar",
+            "agirlikli": false
+          },
+          {
+            "ad": "Dambıl tek kol sıra",
+            "set": 3,
+            "tekrar": 10,
+            "birim": "tekrar",
+            "agirlikli": true
+          },
+          {
+            "ad": "Bant yüz çekişi",
+            "set": 3,
+            "tekrar": 15,
+            "birim": "tekrar",
+            "agirlikli": false
+          },
+          {
+            "ad": "Dambıl biceps curl",
+            "set": 3,
+            "tekrar": 12,
+            "birim": "tekrar",
+            "agirlikli": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "ad": "Sadece dambılla evde",
+    "aciklama": "Bir çift dambıl yeter. Üç gün. Tempo sakin, bel düz.",
+    "seviye": "orta",
+    "haftada_gun": 3,
+    "gunler": [
+      {
+        "ad": "Dambıl",
+        "hareketler": [
+          {
+            "ad": "Dambıl kadeh squat",
+            "set": 3,
+            "tekrar": 12,
+            "birim": "tekrar",
+            "agirlikli": true
+          },
+          {
+            "ad": "Dambıl bench press",
+            "set": 3,
+            "tekrar": 10,
+            "birim": "tekrar",
+            "agirlikli": true
+          },
+          {
+            "ad": "Dambıl tek kol sıra",
+            "set": 3,
+            "tekrar": 10,
+            "birim": "tekrar",
+            "agirlikli": true
+          },
+          {
+            "ad": "Dambıl omuz press",
+            "set": 3,
+            "tekrar": 10,
+            "birim": "tekrar",
+            "agirlikli": true
+          },
+          {
+            "ad": "Dambıl biceps curl",
+            "set": 2,
+            "tekrar": 12,
+            "birim": "tekrar",
+            "agirlikli": true
+          },
+          {
+            "ad": "Dambıl Rumence deadlift",
+            "set": 3,
+            "tekrar": 8,
+            "birim": "tekrar",
+            "agirlikli": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "ad": "40 yaş üstü başlangıç",
+    "aciklama": "Eklem dostu tempo. Ağrı kesilmezse hareketi bırak. Haftada üç kısa seans.",
+    "seviye": "başlangıç",
+    "haftada_gun": 3,
+    "gunler": [
+      {
+        "ad": "Nazik",
+        "hareketler": [
+          {
+            "ad": "Tempolu yürüyüş",
+            "set": 1,
+            "tekrar": 10,
+            "birim": "dk",
+            "agirlikli": false
+          },
+          {
+            "ad": "Duvar oturuşu",
+            "set": 3,
+            "tekrar": 20,
+            "birim": "sn",
+            "agirlikli": false
+          },
+          {
+            "ad": "Glute bridge",
+            "set": 3,
+            "tekrar": 10,
+            "birim": "tekrar",
+            "agirlikli": false
+          },
+          {
+            "ad": "Makine göğüs press",
+            "set": 3,
+            "tekrar": 12,
+            "birim": "tekrar",
+            "agirlikli": true
+          },
+          {
+            "ad": "Bant sıra",
+            "set": 3,
+            "tekrar": 12,
+            "birim": "tekrar",
+            "agirlikli": false
+          },
+          {
+            "ad": "Çocuk pozu",
+            "set": 1,
+            "tekrar": 40,
+            "birim": "sn",
+            "agirlikli": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "ad": "Kalça ve bacak",
+    "aciklama": "Kalça ve bacak odaklı. Diz içeri kaçarsa aralığı kısalt. Haftada üç gün.",
+    "seviye": "orta",
+    "haftada_gun": 3,
+    "gunler": [
+      {
+        "ad": "Alt vücut",
+        "hareketler": [
+          {
+            "ad": "Squat",
+            "set": 3,
+            "tekrar": 12,
+            "birim": "tekrar",
+            "agirlikli": false
+          },
+          {
+            "ad": "Halter hip thrust",
+            "set": 4,
+            "tekrar": 8,
+            "birim": "tekrar",
+            "agirlikli": true
+          },
+          {
+            "ad": "Bant yan adım",
+            "set": 3,
+            "tekrar": 12,
+            "birim": "tekrar",
+            "agirlikli": false
+          },
+          {
+            "ad": "Lunge",
+            "set": 3,
+            "tekrar": 8,
+            "birim": "tekrar",
+            "agirlikli": false
+          },
+          {
+            "ad": "Eşek tekmesi",
+            "set": 3,
+            "tekrar": 12,
+            "birim": "tekrar",
+            "agirlikli": false
+          },
+          {
+            "ad": "Tek bacak glute bridge",
+            "set": 3,
+            "tekrar": 8,
+            "birim": "tekrar",
+            "agirlikli": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "ad": "10 km koşu hazırlık",
+    "aciklama": "Sekiz hafta. Her hafta koşu süresini iki dakika artır. Ağrı varsa yürüyüşe dön. Diz sert basma.",
+    "seviye": "orta",
+    "haftada_gun": 3,
+    "gunler": [
+      {
+        "ad": "Koşu",
+        "hareketler": [
+          {
+            "ad": "Tempolu yürüyüş",
+            "set": 1,
+            "tekrar": 5,
+            "birim": "dk",
+            "agirlikli": false
+          },
+          {
+            "ad": "Koşu",
+            "set": 1,
+            "tekrar": 15,
+            "birim": "dk",
+            "agirlikli": false
+          },
+          {
+            "ad": "Tempolu yürüyüş",
+            "set": 1,
+            "tekrar": 5,
+            "birim": "dk",
+            "agirlikli": false
+          }
+        ]
+      },
+      {
+        "ad": "Tempo",
+        "hareketler": [
+          {
+            "ad": "Koşu",
+            "set": 6,
+            "tekrar": 1,
+            "birim": "dk",
+            "agirlikli": false
+          },
+          {
+            "ad": "Tempolu yürüyüş",
+            "set": 6,
+            "tekrar": 1,
+            "birim": "dk",
+            "agirlikli": false
+          }
+        ]
+      },
+      {
+        "ad": "Uzun",
+        "hareketler": [
+          {
+            "ad": "Koşu",
+            "set": 1,
+            "tekrar": 25,
+            "birim": "dk",
+            "agirlikli": false
+          },
+          {
+            "ad": "Arka bacak esnetme",
+            "set": 2,
+            "tekrar": 20,
+            "birim": "sn",
+            "agirlikli": false
+          },
+          {
+            "ad": "Ayak bileği mobilitesi",
+            "set": 2,
+            "tekrar": 8,
+            "birim": "tekrar",
+            "agirlikli": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "ad": "Yürüyüşle başlangıç",
+    "aciklama": "Kilolu başlangıç. Zıplama yok. Haftada dört gün. Diz ağrırsa düz zemine in.",
+    "seviye": "başlangıç",
+    "haftada_gun": 4,
+    "gunler": [
+      {
+        "ad": "Yürüyüş",
+        "hareketler": [
+          {
+            "ad": "Tempolu yürüyüş",
+            "set": 1,
+            "tekrar": 20,
+            "birim": "dk",
+            "agirlikli": false
+          },
+          {
+            "ad": "Duvar oturuşu",
+            "set": 2,
+            "tekrar": 15,
+            "birim": "sn",
+            "agirlikli": false
+          },
+          {
+            "ad": "Glute bridge",
+            "set": 2,
+            "tekrar": 10,
+            "birim": "tekrar",
+            "agirlikli": false
+          },
+          {
+            "ad": "Kapı göğüs esnetme",
+            "set": 2,
+            "tekrar": 20,
+            "birim": "sn",
+            "agirlikli": false
+          },
+          {
+            "ad": "Ceset pozu",
+            "set": 1,
+            "tekrar": 2,
+            "birim": "dk",
+            "agirlikli": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "ad": "Esneklik ve mobilite",
+    "aciklama": "Haftada dört gün. Zıplama yok. Gerilme acı değil, net his olsun.",
+    "seviye": "başlangıç",
+    "haftada_gun": 4,
+    "gunler": [
+      {
+        "ad": "Mobilite",
+        "hareketler": [
+          {
+            "ad": "Kedi deve",
+            "set": 2,
+            "tekrar": 8,
+            "birim": "tekrar",
+            "agirlikli": false
+          },
+          {
+            "ad": "Kalça fleksör esnetme",
+            "set": 2,
+            "tekrar": 20,
+            "birim": "sn",
+            "agirlikli": false
+          },
+          {
+            "ad": "Arka bacak esnetme",
+            "set": 2,
+            "tekrar": 20,
+            "birim": "sn",
+            "agirlikli": false
+          },
+          {
+            "ad": "Ayak bileği mobilitesi",
+            "set": 2,
+            "tekrar": 8,
+            "birim": "tekrar",
+            "agirlikli": false
+          },
+          {
+            "ad": "Aşağı bakan köpek",
+            "set": 3,
+            "tekrar": 20,
+            "birim": "sn",
+            "agirlikli": false
+          },
+          {
+            "ad": "Çocuk pozu",
+            "set": 1,
+            "tekrar": 40,
+            "birim": "sn",
+            "agirlikli": false
+          },
+          {
+            "ad": "Ceset pozu",
+            "set": 1,
+            "tekrar": 2,
+            "birim": "dk",
+            "agirlikli": false
+          }
+        ]
+      }
+    ]
+  }
 ]
