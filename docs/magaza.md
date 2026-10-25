@@ -53,3 +53,57 @@ Az başla. Her gün oy ver. Olmak istediğin insan ol.
 4. 1 yıllık projeksiyon: "Küçük günler, büyük sonuçlar"
 5. Koç ekranı: "Sistemini sana göre ayarlar"
 6. Onboarding kimlik seçimi: "Nasıl bir insan olmak istiyorsun?"
+
+## App Store
+
+6.7 inç ekran görüntüsü (iPhone Pro Max) için. Karakter sayıları parantezde.
+
+**Ad (en fazla 30):** Ben Disiplinim (14)
+
+**Alt başlık (en fazla 30):** Alışkanlık, seri, rütbe (23)
+
+**Promosyon metni (en fazla 170):**
+Bugün bir iş bitir. Yarın rütbe konuşur. Alışkanlığını işaretle, serini koru, bahaneyi bırak. Kayıt telefonunda kalır. (118)
+
+**Anahtar kelime alanı (en fazla 100, virgülle, boşluksuz):**
+alışkanlık,disiplin,rutin,seri,hedef,kalori,antrenman,motivasyon,günlük plan,odak (81)
+
+**Açıklama (en fazla 4000):**
+
+Ben Disiplinim, alışkanlığı duygudan çıkarıp güne bağlar. İşaretlersin, XP kazanırsın, rütbe atlarsın: Acemi, Er, Onbaşı, Çavuş, Astsubay, Teğmen, Yüzbaşı, Binbaşı, Albay, Komutan, Efsane.
+
+NE YAPARSIN
+• Alışkanlık ekle. Zor gün için daha küçük bir iş de sayılır.
+• Günü kapat. Normal iş, zor iş ve tam gün ayrı XP verir.
+• Seri uzarsa çarpan artar. Üst üste üç boş gün eksi yüz XP yazar. Bugün henüz bitmediyse seri kırılmaz.
+• Ajanda, not defteri, yaşam planı ve film listesi aynı yerde durur.
+• Her gün kısa, sert bir söz çıkar. Suçlama yok. Emir var.
+
+PREMİUM KİLİT
+• Üç yüz yemek: porsiyon, kalori, protein, karbonhidrat, yağ.
+• Seksen hareket ve on program. Ev, salon, yürüyüş, koşu ve esneklik.
+Bu sürümde kartla ödeme yoktur. Kilit, yerini gösterir.
+
+NE DEĞİLDİR
+Doktor, diyetisyen veya tedavi uygulaması değildir. Beslenme kaydı ve antrenman listesi kişisel takip içindir. Teşhis, ilaç veya garanti kilo vaadi yoktur.
+
+VERİ
+Hesap yok. Sunucuya alışkanlık veya öğün gitmez. Kayıt cihazda kalır. Ayarlardan tamamı silinir. Ayrıntı gizlilik politikasındadır.
+
+Az başla. İşaretle. Rütbeni işinle al.
+
+(1104 karakter)
+
+**6.7 inç ekran görüntüsü başlıkları (8 adet, en fazla 6 kelime):**
+1. Bugün işini bitir (3 kelime)
+2. Mini hedef seriyi tutar (4 kelime)
+3. Rütbe hediye değildir (3 kelime)
+4. Ajanda ve yaşam planı (4 kelime)
+5. Üç yüz yemek listesi (4 kelime)
+6. Seksen hareket, on program (4 kelime)
+7. Söz kısa, karar net (4 kelime)
+8. Kayıt yalnızca cihazda (3 kelime)
+
+**Neler yeni (sürüm 1.0):**
+İlk sürüm. Alışkanlık, rütbe, ajanda, not, yaşam planı, film listesi ve günün sözü. Kalori listesi ve antrenman programı kilitli durur. Hesap yok, veri cihazda.
+(160 karakter)
