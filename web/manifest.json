@@ -1,10 +1,10 @@
 {
-    "name": "I Am Disiplin",
+    "name": "Ben Disiplinim",
     "short_name": "Disiplin",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#1F6B52",
-    "theme_color": "#1F6B52",
+    "background_color": "#000000",
+    "theme_color": "#000000",
     "description": "Kimlik odaklı alışkanlık uygulaması",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
