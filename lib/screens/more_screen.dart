@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:i_am_disiplin/screens/calorie_screen.dart';
+import 'package:i_am_disiplin/screens/diet_screen.dart';
 import 'package:i_am_disiplin/screens/film_screen.dart';
 import 'package:i_am_disiplin/screens/settings_screen.dart';
+import 'package:i_am_disiplin/screens/trainer_screen.dart';
 import 'package:i_am_disiplin/widgets/common.dart';
 
 class MoreScreen extends StatelessWidget {
@@ -14,6 +17,9 @@ class MoreScreen extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         children: [
           _link(context, 'FİLMLER', const FilmScreen()),
+          _link(context, 'KALORİ', const CalorieScreen()),
+          _link(context, 'DİYETİSYEN', const DietScreen()),
+          _link(context, 'ANTRENÖR', const TrainerScreen()),
           _link(context, 'AYARLAR', const SettingsScreen()),
         ],
       ),
