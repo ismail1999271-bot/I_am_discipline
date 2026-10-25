@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:i_am_disiplin/screens/film_screen.dart';
 import 'package:i_am_disiplin/screens/settings_screen.dart';
 import 'package:i_am_disiplin/widgets/common.dart';
 
@@ -12,6 +13,7 @@ class MoreScreen extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
+          _link(context, 'FİLMLER', const FilmScreen()),
           _link(context, 'AYARLAR', const SettingsScreen()),
         ],
       ),

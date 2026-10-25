@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:i_am_disiplin/models/app_models.dart';
+import 'package:i_am_disiplin/services/quotes.dart';
 import 'package:i_am_disiplin/services/store.dart';
 import 'package:i_am_disiplin/services/xp_engine.dart';
 import 'package:i_am_disiplin/widgets/common.dart';
@@ -51,6 +52,13 @@ class HomeScreen extends StatelessWidget {
                   child: Text('XP düştü. Rütbe korunur.', style: TextStyle(color: Colors.white54)),
                 ),
               const SizedBox(height: 18),
+              SharpCard(
+                child: Text(
+                  QuoteBook.today(),
+                  style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w800, height: 1.35),
+                ),
+              ),
+              const SizedBox(height: 22),
               const SectionTitle('BUGÜN'),
               const SizedBox(height: 10),
               if (today.isEmpty)
