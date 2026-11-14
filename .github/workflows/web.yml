@@ -4,11 +4,9 @@ on:
     branches: [main]
   workflow_dispatch:
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 concurrency:
-  group: pages
+  group: web
   cancel-in-progress: true
 jobs:
   build:
@@ -20,16 +18,15 @@ jobs:
           channel: stable
       - run: flutter pub get
       - run: flutter test
-      - run: flutter build web --release --base-href /I_am_discipline/
-      - uses: actions/upload-pages-artifact@v3
+      # --no-web-resources-cdn: CanvasKit uygulamanın içinde gelir, dış CDN'e bağımlı kalmaz
+      - run: flutter build web --release --no-web-resources-cdn --base-href /I_am_discipline/
+      - run: cp build/web/index.html build/web/404.html
+      # Derlenmiş uygulama gh-pages dalına gider.
+      # GitHub > Settings > Pages > "Deploy from a branch" > gh-pages / (root) seçilince yayında olur.
+      - uses: peaceiris/actions-gh-pages@v4
         with:
-          path: build/web
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.d.outputs.page_url }}
-    steps:
-      - id: d
-        uses: actions/deploy-pages@v4
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: build/web
+          publish_branch: gh-pages
+          force_orphan: true
+          commit_message: "Web derlemesi"
